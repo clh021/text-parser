@@ -1,4 +1,4 @@
-package main
+package textParser
 
 import (
 	"bytes"
@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-func main() {
+func Run() {
 	viper.SetConfigType("yaml")
 	var yamlExample = []byte(`
 name: steve
