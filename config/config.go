@@ -1,4 +1,4 @@
-package textParser
+package conf
 
 import (
 	"github.com/go-playground/validator"
@@ -23,7 +23,8 @@ type Pipe struct {
 }
 
 type Config struct {
-	File  string `json:"file"`
-	Pipes []Pipe `json:"pipes"`
-	Debug bool   `json:"debug"`
+	FormType   string `json:"formType"`
+	FormSource string `json:"formSource"`
+	Pipes      []Pipe `json:"pipes"`
+	Debug      bool   `json:"debug"`
 }
