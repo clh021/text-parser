@@ -1,4 +1,4 @@
-package conf
+package config
 
 import (
 	"github.com/go-playground/validator"
@@ -18,13 +18,15 @@ func LoadConfig(fpath string) (*Config, error) {
 }
 
 type Pipe struct {
-	Cmd    string   `json:cmd`
-	Params []string `json:params`
+	Cmd    string   `json:"cmd"`
+	Params []string `json:"params"`
 }
 
-type Config struct {
+type TextForm struct {
 	FormType   string `json:"formType"`
 	FormSource string `json:"formSource"`
-	Pipes      []Pipe `json:"pipes"`
 	Debug      bool   `json:"debug"`
+	Pipes      []Pipe `json:"pipes"`
 }
+
+type Config map[string]TextForm

@@ -1,11 +1,42 @@
 {
-    "file":"filename.text",
-    "pipes":[
-        {"cmd":"split", "params": ["\n"]},
-        {"cmd":"contain", "params": ["Resolution"]},
-        {"cmd":"join", "params": ["\n"]},
-        {"cmd":"split", "params": [":"]},
-        {"cmd":"SC", "params": ["x"]},
-        {"cmd":"join", "params": ["\n"]}
-    ]
+    "file": {
+        "formType": "file",
+        "formSource":"filename.text",
+        "pipes":[
+            {"cmd":"split", "params": ["\n"]},
+            {"cmd":"contain", "params": ["Resolution"]},
+            {"cmd":"join", "params": ["\n"]},
+            {"cmd":"split", "params": [":"]},
+            {"cmd":"SC", "params": ["x"]},
+            {"cmd":"join", "params": ["\n"]}
+        ]
+    },
+    "lshwCmd": {
+        "formType": "command",
+        "formSource":"lshw -json",
+        "pipes":[]
+    },
+    "lsmemCmd": {
+        "formType": "command",
+        "formSource":"lsmem -J",
+        "pipes":[]
+    },
+    "lsipcCmd": {
+        "formType": "command",
+        "formSource":"lsipc -J",
+        "pipes":[]
+    },
+    "lsblkCmd": {
+        "formType": "command",
+        "formSource":"lsblk -J",
+        "pipes":[]
+    },
+    "lspciCmd": {
+        "formType": "command",
+        "formSource":"lspci -vvv",
+        "pipes":[
+            {"cmd":"split", "params": ["\n"]},
+            {"cmd":"contain", "params": ["Resolution"]}
+        ]
+    }
 }

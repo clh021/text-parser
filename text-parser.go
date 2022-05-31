@@ -5,6 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/clh021/text-parser/config"
 	"github.com/linakesi/lnksutils"
 )
 
@@ -31,7 +32,6 @@ func GetProgramPath() string {
 	if err != nil {
 		panic(err)
 	}
-	// fmt.Println("exReal: ", exReal)
 	return filepath.Dir(exReal)
 }
 
@@ -43,11 +43,26 @@ func ParseParam() string {
 func Run() {
 	file := ParseParam()
 	if WaitFile(file) {
-		conf, err := LoadConfig(file)
+		configs, err := config.LoadConfig(file)
 		if err != nil {
-			panic(err)
+			fmt.Println(err)
 		}
-		fmt.Println("exist file", conf, err)
+		for key, value := range *configs {
+			fmt.Println(key, "------>>>")
+			fmt.Printf("%+v\n", value)
+		}
+		// for conf := range *configs {
+		// 	switch conf.FormType {
+		// 	case "file":
+		// 		lnksutils.IsFileExist(conf.FormSource)
+		// 	case "command":
+		// 		lnksutils.IsFileExist(conf.FormSource)
+		// 	default:
+		// 		fmt.Printf(" Do not support formType '%s'.\n", conf.FormType)
+		// 	}
+		// 	// parseText(conf.DataSource)
+		// 	fmt.Println("exist file", conf, err)
+		// }
 	} else {
 		fmt.Println("not exist file")
 	}
