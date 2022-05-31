@@ -1,16 +1,38 @@
 package textParser
 
 import (
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
+	"reflect"
 	"strings"
 
 	"github.com/clh021/text-parser/config"
 	"github.com/linakesi/lnksutils"
 )
+
+type stubMapping map[string]interface{}
+
+var StubStorage = stubMapping{}
+
+func Call(funcName string, params ...interface{}) (result interface{}, err error) {
+	f := reflect.ValueOf(StubStorage[funcName])
+	if len(params) != f.Type().NumIn() {
+		err = errors.New("The number of params is out of index.")
+		return
+	}
+	in := make([]reflect.Value, len(params))
+	for k, param := range params {
+		in[k] = reflect.ValueOf(param)
+	}
+	var res []reflect.Value
+	res = f.Call(in)
+	result = res[0].Interface()
+	return
+}
 
 // fmt.printf
 func ParseText(configs config.Config) {
