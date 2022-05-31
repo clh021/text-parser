@@ -46,6 +46,10 @@ func ParseText(configs config.Config) {
 		default:
 			fmt.Printf(" Do not support formType '%s'.\n", conf.FormType)
 		}
-		// ParseText(conf.Text)
+		for _, p := range conf.Pipes {
+			fmt.Printf("%+v \t", p.Cmd)
+			fmt.Printf("%+v \n", p.Params)
+		}
+		// callback FuncHandle by string(funcName)
 	}
 }
