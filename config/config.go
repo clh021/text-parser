@@ -27,6 +27,7 @@ type TextForm struct {
 	FormSource string `json:"formSource"`
 	Debug      bool   `json:"debug"`
 	Pipes      []Pipe `json:"pipes"`
+	Text       string
 }
 
 type Config map[string]TextForm

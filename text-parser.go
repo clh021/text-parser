@@ -2,6 +2,8 @@ package textParser
 
 import (
 	"fmt"
+	"io/ioutil"
+	"log"
 	"os"
 	"path/filepath"
 
@@ -40,6 +42,10 @@ func ParseParam() string {
 	return defaultConfPath
 }
 
+func ParseText(text string) {
+	fmt.Printf("%+v \n", text)
+}
+
 func Run() {
 	file := ParseParam()
 	if WaitFile(file) {
@@ -47,22 +53,29 @@ func Run() {
 		if err != nil {
 			fmt.Println(err)
 		}
-		for key, value := range *configs {
-			fmt.Println(key, "------>>>")
-			fmt.Printf("%+v\n", value)
+		for name, conf := range *configs {
+			fmt.Println(name, "------>>>")
+			// fmt.Printf("%+v\n", conf)
+			switch conf.FormType {
+			case "file":
+				if lnksutils.IsFileExist(conf.FormSource) {
+					content, err := ioutil.ReadFile(conf.FormSource)
+					if err != nil {
+						log.Fatal(err)
+					}
+					conf.Text = string(content)
+				} else {
+					fmt.Printf("%+v 文件不存在\n", conf.FormSource)
+				}
+			case "command":
+				lnksutils.IsFileExist(conf.FormSource)
+				// conf.Text = string(content)
+			default:
+				fmt.Printf(" Do not support formType '%s'.\n", conf.FormType)
+			}
+			ParseText(conf.Text)
 		}
-		// for conf := range *configs {
-		// 	switch conf.FormType {
-		// 	case "file":
-		// 		lnksutils.IsFileExist(conf.FormSource)
-		// 	case "command":
-		// 		lnksutils.IsFileExist(conf.FormSource)
-		// 	default:
-		// 		fmt.Printf(" Do not support formType '%s'.\n", conf.FormType)
-		// 	}
-		// 	// parseText(conf.DataSource)
 		// 	fmt.Println("exist file", conf, err)
-		// }
 	} else {
 		fmt.Println("not exist file")
 	}
