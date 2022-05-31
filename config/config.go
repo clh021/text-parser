@@ -1,19 +1,12 @@
 package config
 
 import (
-	"github.com/go-playground/validator"
 	"github.com/linakesi/lnksutils"
 )
 
 func LoadConfig(fpath string) (*Config, error) {
 	var conf Config
 	err := lnksutils.FileToJSON(fpath, &conf)
-	if err != nil {
-		return nil, err
-	}
-	v := validator.New()
-	v.SetTagName("binding")
-	err = v.Struct(conf)
 	return &conf, err
 }
 
@@ -23,10 +16,10 @@ type Pipe struct {
 }
 
 type TextForm struct {
-	FormType   string `json:"formType"`
-	FormSource string `json:"formSource"`
+	FormType   string `json:"formType" validate:"required,oneof=command file2"`
+	FormSource string `json:"formSource" validate:"required,min=3,max=260"`
 	Debug      bool   `json:"debug"`
-	Pipes      []Pipe `json:"pipes"`
+	Pipes      []Pipe `json:"pipes" validate:"required"`
 	Text       string
 }
 

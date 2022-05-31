@@ -2,8 +2,6 @@ package textParser
 
 import (
 	"fmt"
-	"io/ioutil"
-	"log"
 	"os"
 	"path/filepath"
 
@@ -37,45 +35,15 @@ func GetProgramPath() string {
 	return filepath.Dir(exReal)
 }
 
-func ParseParam() string {
-	defaultConfPath := filepath.Join(GetProgramPath(), "config.json")
-	return defaultConfPath
-}
-
-func ParseText(text string) {
-	fmt.Printf("%+v \n", text)
-}
-
 func Run() {
-	file := ParseParam()
+	file := filepath.Join(GetProgramPath(), "config.json")
 	if WaitFile(file) {
 		configs, err := config.LoadConfig(file)
 		if err != nil {
-			fmt.Println(err)
+			panic(err)
 		}
-		for name, conf := range *configs {
-			fmt.Println(name, "------>>>")
-			// fmt.Printf("%+v\n", conf)
-			switch conf.FormType {
-			case "file":
-				if lnksutils.IsFileExist(conf.FormSource) {
-					content, err := ioutil.ReadFile(conf.FormSource)
-					if err != nil {
-						log.Fatal(err)
-					}
-					conf.Text = string(content)
-				} else {
-					fmt.Printf("%+v 文件不存在\n", conf.FormSource)
-				}
-			case "command":
-				lnksutils.IsFileExist(conf.FormSource)
-				// conf.Text = string(content)
-			default:
-				fmt.Printf(" Do not support formType '%s'.\n", conf.FormType)
-			}
-			ParseText(conf.Text)
-		}
-		// 	fmt.Println("exist file", conf, err)
+		// fmt.Printf("%+v", configs)
+		ParseText(*configs)
 	} else {
 		fmt.Println("not exist file")
 	}
