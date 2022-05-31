@@ -1,0 +1,11 @@
+{
+    "file":"filename.text",
+    "pipes":[
+        {"cmd":"split", "params": ["\n"]},
+        {"cmd":"contain", "params": ["Resolution"]},
+        {"cmd":"join", "params": ["\n"]},
+        {"cmd":"split", "params": [":"]},
+        {"cmd":"SC", "params": ["x"]},
+        {"cmd":"join", "params": ["\n"]}
+    ]
+}

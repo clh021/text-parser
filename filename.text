@@ -1,0 +1,1298 @@
+
+Computer
+********
+
+
+Summary
+-------
+
+-Computer-
+         Processor : Intel Core i5-6400
+                     1 physical processor; 4 cores; 4 threads
+            Memory : 16294MB (10210MB used)
+      Machine Type : Desktop
+  Operating System : Debian GNU/Linux 11 (bullseye)
+         User Name : chenlianghong (lee)
+         Date/Time : 2022年05月18日 星期三 04时15分20秒
+-Display-
+              Resolution : 1920x1080 pixels
+         Display Adapter : Intel HD Graphics 530
+         OpenGL Renderer : Mesa Intel(R) HD Graphics 530 (SKL GT2)
+  Session Display Server : The X.Org Foundation 1.20.11
+-Audio Devices-
+  Audio Adapter : HDA-Intel - HDA Intel PCH
+-Input Devices-
+                             Sleep Button : Keyboard
+                             Power Button : Keyboard
+                             Power Button : Keyboard
+                                Video Bus : Keyboard
+                         LXD Gaming Mouse : Keyboard
+                         LXD Gaming Mouse : Mouse
+        LXD Gaming Mouse Consumer Control : Keyboard
+          LXD Gaming Mouse System Control : Keyboard
+                    Logitech USB Keyboard : Keyboard
+   Logitech USB Keyboard Consumer Control : Keyboard
+     Logitech USB Keyboard System Control : Keyboard
+                               PC Speaker : Speaker
+                       HDA Digital PCBeep : Keyboard
+                   HDA Intel PCH Rear Mic : Audio
+                       HDA Intel PCH Line : Audio
+              HDA Intel PCH Headphone Mic : Audio
+                   HDA Intel PCH Line Out : Audio
+              HDA Intel PCH HDMI/DP,pcm:3 : Audio
+              HDA Intel PCH HDMI/DP,pcm:7 : Audio
+              HDA Intel PCH HDMI/DP,pcm:8 : Audio
+              HDA Intel PCH HDMI/DP,pcm:9 : Audio
+             HDA Intel PCH HDMI/DP,pcm:10 : Audio
+-Printers (CUPS)-
+  HP_LaserJet_MFP_M437_M443_NPI8217F7_
+-UDisks2-
+         sda : sFORESEE 256GB SSD
+
+Operating System
+----------------
+
+-Version-
+        Kernel : Linux 5.10.0-14-amd64 (x86_64)
+  Command Line : BOOT_IMAGE=/boot/vmlinuz-5.10.0-14-amd64 root=UUID=a1ae99ab-efe3-48dc-b687-12f4686d4ee0 ro quiet splash
+       Version : #1 SMP Debian 5.10.113-1 (2022-04-29)
+     C Library : GNU C Library / (Debian GLIBC 2.31-13+deb11u3) 2.31
+  Distribution : Debian GNU/Linux 11 (bullseye)
+-Current Session-
+        Computer Name : dev-computer
+            User Name : chenlianghong (lee)
+             Language : zh_CN.UTF-8 (zh_CN:en_US)
+       Home Directory : /home/chenlianghong
+  Desktop Environment : KDE on x11
+-Misc-
+        Uptime : 20 hours 25 minutes
+  Load Average : 0.71, 0.73, 1.40
+
+Security
+--------
+
+-HardInfo-
+  HardInfo running as : User
+-Health-
+  Available entropy in /dev/random : 3558 bits (healthy)
+-Hardening Features-
+        ASLR : Fully enabled (mmap base+stack+VDSO base+heap)
+       dmesg : User access forbidden
+-Linux Security Modules-
+  Modules available : lockdown,capability,yama,apparmor,tomoyo
+     SELinux status : Not installed
+-CPU Vulnerabilities-
+      itlb_multihit : KVM: Mitigation: VMX disabled
+               l1tf : Mitigation: PTE Inversion; VMX: conditional cache flushes, SMT disabled
+                mds : Vulnerable: Clear CPU buffers attempted, no microcode; SMT disabled
+           meltdown : Mitigation: PTI
+  spec_store_bypass : Vulnerable
+         spectre_v1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+         spectre_v2 : Mitigation: Retpolines, STIBP: disabled, RSB filling
+              srbds : Vulnerable: No microcode
+    tsx_async_abort : Not affected
+
+Kernel Modules
+--------------
+
+-Loaded Modules-
+                          veth : Virtual Ethernet Tunnel
+                        xt_nat : SNAT and DNAT targets support
+                     xt_tcpudp : Xtables: TCP, UDP and UDP-Lite match
+                  xt_conntrack : Xtables: connection tracking state match
+                 nft_chain_nat
+                 xt_MASQUERADE : Xtables: automatic-address SNAT
+                        nf_nat
+          nf_conntrack_netlink
+                  nf_conntrack
+                nf_defrag_ipv6
+                nf_defrag_ipv4
+                     xfrm_user
+                     xfrm_algo
+                   nft_counter : nftables counter rule support
+                   xt_addrtype : Xtables: address type match
+                    nft_compat : x_tables over nftables support
+                     nf_tables
+                  br_netfilter : Linux ethernet netfilter firewall bridge
+                        bridge
+                           stp
+                           llc : LLC IEEE 802.2 core support
+                     nfnetlink : Netfilter messages via netlink socket
+                       overlay : Overlay filesystem
+                        rfkill : RF switch support
+            snd_hda_codec_hdmi : HDMI HD-audio codec
+         snd_hda_codec_realtek : Realtek HD-audio codec
+                intel_rapl_msr : Driver for Intel RAPL (Running Average Power Limit) control via MSR interface
+         snd_hda_codec_generic : Generic HD-audio codec parser
+             intel_rapl_common : Intel Runtime Average Power Limit (RAPL) common code
+                 ledtrig_audio : LED trigger for audio mute control
+                   binfmt_misc
+                 snd_hda_intel : Intel HDA driver
+              snd_intel_dspcfg : Intel DSP config driver
+               soundwire_intel : Intel Soundwire Master Driver
+  soundwire_generic_allocation : SoundWire Generic Bandwidth Allocation
+                     nls_ascii
+                     nls_cp437
+                  snd_soc_core : ALSA SoC Core
+                          vfat : VFAT filesystem support
+                           fat
+                  snd_compress : ALSA Compressed offload framework
+                      mei_hdcp : MEI HDCP
+             soundwire_cadence : Cadence Soundwire Library
+                 snd_hda_codec : HDA codec core
+          x86_pkg_temp_thermal : X86 PKG TEMP Thermal Driver
+              intel_powerclamp : Package Level C-state Idle Injection for Intel CPUs
+                      coretemp : Intel Core temperature monitor
+                        dcdbas : Dell Systems Management Base Driver (version 5.6.0-3.4)
+                dell_smm_hwmon : Dell laptop SMM BIOS hwmon driver
+                     kvm_intel
+                  snd_hda_core : HD-audio bus
+                   rtsx_usb_ms : Realtek USB Memstick Card Host Driver
+                      iTCO_wdt : Intel TCO WatchDog Timer Driver
+                     snd_hwdep : Hardware dependent layer
+                 intel_pmc_bxt : Intel Broxton PMC driver
+           iTCO_vendor_support : Intel TCO Vendor Specific WatchDog Timer Driver Support
+                 soundwire_bus : SoundWire bus
+                      memstick : Sony MemoryStick core driver
+                        joydev : Joystick device interfaces
+                      watchdog : WatchDog Timer Driver Core
+                          at24 : Driver for most I2C EEPROMs
+                            sg : SCSI generic (sg) driver
+                       snd_pcm : Midlevel PCM code for ALSA.
+                           kvm
+                     snd_timer : ALSA timer interface
+                           snd : Advanced Linux Sound Architecture driver for soundcards.
+                     irqbypass : IRQ bypass manager utility module
+                       tpm_crb : TPM2 Driver
+                        mei_me : Intel(R) Management Engine Interface
+                     soundcore : Core sound module
+                       tpm_tis : TPM Driver
+                          rapl
+                           mei : Intel(R) Management Engine Interface
+                  tpm_tis_core : TPM Driver
+             intel_pch_thermal : Intel PCH Thermal driver
+                         evdev : Input driver event char devices
+                           tpm : TPM Driver
+                  intel_cstate
+                     serio_raw : Raw serio driver
+                  intel_uncore
+                      rng_core : H/W Random Number Generator (RNG) driver
+                    efi_pstore : EFI variable backend for pstore
+                intel_pmc_core : Intel PMC Core Driver
+                      acpi_pad : ACPI Processor Aggregator Driver
+                        pcspkr : PC Speaker beeper driver
+                      wmi_bmof : WMI embedded Binary MOF driver
+         intel_wmi_thunderbolt : Intel WMI Thunderbolt force power driver
+                    parport_pc : PC-style parallel port driver
+                         ppdev
+                            lp
+                       parport
+                          fuse : Filesystem in Userspace
+                      configfs : Simple RAM filesystem for user driven kernel subsystem configuration.
+                      efivarfs : EFI Variable Filesystem
+                     ip_tables : IPv4 packet filter
+                      x_tables : {ip,ip6,arp,eb}_tables backend module
+                       autofs4
+                          ext4 : Fourth Extended Filesystem
+                         crc16 : CRC16 calculations
+                       mbcache : Meta block cache (for extended attributes)
+                          jbd2
+                         btrfs
+               blake2b_generic : BLAKE2b generic implementation
+                   hid_generic : HID generic driver
+                        usbhid : USB HID core driver
+                           hid
+                        raid10 : RAID10 (striped mirror) personality for MD
+                       raid456 : RAID4/5/6 (striping with parity) personality for MD
+             async_raid6_recov : asynchronous RAID-6 recovery api
+                  async_memcpy : asynchronous memcpy api
+                      async_pq : asynchronous raid6 syndrome generation/validation
+                     async_xor : asynchronous xor/xor-zero-sum api
+                      async_tx : Asynchronous Bulk Memory Transactions API
+                           xor
+                rtsx_usb_sdmmc : Realtek USB SD/MMC Card Host Driver
+                      mmc_core
+                      rtsx_usb : Realtek USB Card Reader Driver
+                      raid6_pq : RAID6 Q-syndrome calculations
+                     libcrc32c : CRC32c (Castagnoli) calculations
+                crc32c_generic : CRC32c (Castagnoli) calculations wrapper for lib/crc32c
+                         raid1 : RAID1 (mirroring) personality for MD
+                         raid0 : RAID0 (striping) personality for MD
+                     multipath : simple multi-path personality for MD
+                        linear : Linear device concatenation personality for MD
+                        md_mod : MD RAID framework
+                        sd_mod : SCSI disk (sd) driver
+                        t10_pi
+                    crc_t10dif : T10 DIF CRC calculation (library API)
+             crct10dif_generic : T10 DIF CRC calculation.
+              crct10dif_pclmul : T10 DIF CRC calculation accelerated with PCLMULQDQ.
+              crct10dif_common : T10 DIF CRC calculation common code
+                  crc32_pclmul
+                  crc32c_intel : CRC32c (Castagnoli) optimization using Intel Hardware.
+                          i915 : Intel Graphics
+           ghash_clmulni_intel : GHASH hash function, accelerated by PCLMULQDQ-NI
+                   aesni_intel : Rijndael (AES) Cipher Algorithm, Intel AES-NI instructions optimized
+                        libaes : Generic AES library
+                   crypto_simd
+                        cryptd : Software async crypto daemon
+                          ahci : AHCI SATA low-level driver
+                   glue_helper
+                  i2c_algo_bit : I2C-Bus bit-banging algorithm
+                       libahci : Common AHCI SATA low-level routines
+                       psmouse : PS/2 mouse driver
+                drm_kms_helper : DRM KMS helper
+                        libata : Library module for ATA devices
+                      xhci_pci : xHCI PCI Host Controller Driver
+                         r8169 : RealTek RTL-8169 Gigabit Ethernet driver
+                           cec : Device node registration for cec drivers
+                       realtek : Realtek PHY driver
+                      xhci_hcd : &apos;eXtensible&apos; Host Controller (xHC) Driver
+                   mdio_devres
+                      i2c_i801 : I801 SMBus driver
+                        libphy : PHY library
+                     i2c_smbus : SMBus protocol extensions support
+                           drm : DRM shared core routines
+                       usbcore
+                      scsi_mod : SCSI core
+                    usb_common
+                           fan : ACPI Fan Driver
+                           wmi : ACPI-WMI Mapping Driver
+                         video : ACPI Video Driver
+                        button : ACPI Button Driver
+
+Boots
+-----
+
+-Boots-
+  Tue May 17 07:49 : 5.10.0-14-amd64
+   Mon May 9 07:31 : 5.10.0-14-amd64
+  Sun Apr 24 15:16 : 5.10.0-13-amd64
+
+Languages
+---------
+
+-Available Languages-
+  en_US.utf8 : English locale for the USA
+  zh_CN.utf8 : Chinese locale for Peoples Republic of China
+     C.UTF-8 : C locale
+
+Memory Usage
+------------
+
+-Memory-
+           MemTotal	Total Memory	16294740 KiB
+            MemFree	Free Memory	2376252 KiB
+       MemAvailable		8200736 KiB
+            Buffers		1267036 KiB
+             Cached		4003216 KiB
+         SwapCached	Cached Swap	0 KiB
+             Active		2584192 KiB
+           Inactive		8607028 KiB
+       Active(anon)		62316 KiB
+     Inactive(anon)		6735612 KiB
+       Active(file)		2521876 KiB
+     Inactive(file)		1871416 KiB
+        Unevictable		593488 KiB
+            Mlocked		96 KiB
+          SwapTotal	Virtual Memory	0 KiB
+           SwapFree	Free Virtual Memory	0 KiB
+              Dirty		400 KiB
+          Writeback		0 KiB
+          AnonPages		6338548 KiB
+             Mapped		1239064 KiB
+              Shmem		884296 KiB
+       KReclaimable		1776684 KiB
+               Slab		1945892 KiB
+       SReclaimable		1776684 KiB
+         SUnreclaim		169208 KiB
+        KernelStack		22272 KiB
+         PageTables		86556 KiB
+       NFS_Unstable		0 KiB
+             Bounce		0 KiB
+       WritebackTmp		0 KiB
+        CommitLimit		8147368 KiB
+       Committed_AS		19330508 KiB
+       VmallocTotal		-1 KiB
+        VmallocUsed		42580 KiB
+       VmallocChunk		0 KiB
+             Percpu		3072 KiB
+  HardwareCorrupted		0 KiB
+      AnonHugePages		1918976 KiB
+     ShmemHugePages		0 KiB
+     ShmemPmdMapped		0 KiB
+      FileHugePages		0 KiB
+      FilePmdMapped		0 KiB
+    HugePages_Total		0
+     HugePages_Free		0
+     HugePages_Rsvd		0
+     HugePages_Surp		0
+       Hugepagesize		2048 KiB
+            Hugetlb		0 KiB
+        DirectMap4k		429996 KiB
+        DirectMap2M		15200256 KiB
+        DirectMap1G		1048576 KiB
+
+Filesystems
+-----------
+
+-Mounted File Systems-
+        udev	/dev	0.00 % (7.7 GiB of 7.7 GiB)
+       tmpfs	/run	0.10 % (1.6 GiB of 1.6 GiB)
+   /dev/sda5	/	78.36 % (26.1 GiB of 120.6 GiB)
+       tmpfs	/dev/shm	2.36 % (7.6 GiB of 7.8 GiB)
+       tmpfs	/run/lock	0.08 % (5.0 MiB of 5.0 MiB)
+       tmpfs	/tmp	0.79 % (7.7 GiB of 7.8 GiB)
+   /dev/sda1	/boot/efi	31.06 % (66.2 MiB of 96.0 MiB)
+       tmpfs	/run/user/1001	0.01 % (1.6 GiB of 1.6 GiB)
+
+Display
+-------
+
+-Session-
+        Type : x11
+-Wayland-
+  Current Display Name : (Not Available)
+-X Server-
+  Current Display Name : :0
+                Vendor : The X.Org Foundation
+               Version : 1.20.11
+        Release Number : 12011000
+-Screens-
+    Screen 0 : 1920x1080 pixels
+-Outputs (XRandR)-
+      HDMI-1 : Disconnected; Unused
+        DP-1 : Connected; 1920x1080 pixels, offset (0, 0)
+-OpenGL (GLX)-
+                                    Vendor : Intel
+                                  Renderer : Mesa Intel(R) HD Graphics 530 (SKL GT2)
+                          Direct Rendering : Yes
+                   Version (Compatibility) : 4.6 (Compatibility Profile) Mesa 20.3.5
+  Shading Language Version (Compatibility) : 4.60
+                            Version (Core) : 4.6 (Core Profile) Mesa 20.3.5
+           Shading Language Version (Core) : 4.60
+                              Version (ES) : OpenGL ES 3.2 Mesa 20.3.5
+             Shading Language Version (ES) : OpenGL ES GLSL ES 3.20
+                               GLX Version : 1.4
+
+Environment Variables
+---------------------
+
+-Environment Variables-
+            CLUTTER_IM_MODULE : ibus
+                    COLORFGBG : 15;0
+                    COLORTERM : truecolor
+     DBUS_SESSION_BUS_ADDRESS : unix:path=/run/user/1001/bus
+              DESKTOP_SESSION : plasma
+                      DISPLAY : :0
+               GPG_AGENT_INFO : /run/user/1001/gnupg/S.gpg-agent:0:1
+                GTK2_RC_FILES : /etc/gtk-2.0/gtkrc:/home/chenlianghong/.gtkrc-2.0:/home/chenlianghong/.config/gtkrc-2.0
+                GTK_IM_MODULE : ibus
+                  GTK_MODULES : gail:atk-bridge
+                 GTK_RC_FILES : /etc/gtk/gtkrc:/home/chenlianghong/.gtkrc:/home/chenlianghong/.config/gtkrc
+                         HOME : /home/chenlianghong
+      KDED_STARTED_BY_KDEINIT : 1
+    KDE_APPLICATIONS_AS_SCOPE : 1
+             KDE_FULL_SESSION : true
+              KDE_SESSION_UID : 1001
+          KDE_SESSION_VERSION : 5
+         KONSOLE_DBUS_SERVICE : :1.139
+         KONSOLE_DBUS_SESSION : /Sessions/9
+          KONSOLE_DBUS_WINDOW : /Windows/1
+              KONSOLE_VERSION : 201203
+                         LANG : zh_CN.UTF-8
+                     LANGUAGE : zh_CN:en_US
+                   LC_ADDRESS : zh_CN.UTF-8
+            LC_IDENTIFICATION : zh_CN.UTF-8
+               LC_MEASUREMENT : zh_CN.UTF-8
+                  LC_MONETARY : zh_CN.UTF-8
+                      LC_NAME : zh_CN.UTF-8
+                   LC_NUMERIC : zh_CN.UTF-8
+                     LC_PAPER : zh_CN.UTF-8
+                 LC_TELEPHONE : zh_CN.UTF-8
+                      LC_TIME : zh_CN.UTF-8
+                      LOGNAME : chenlianghong
+                       OLDPWD : /home/chenlianghong/Projects/hardinfo/build
+           PAM_KWALLET5_LOGIN : /run/user/1001/kwallet5.socket
+                         PATH : /home/chenlianghong/.local/bin:/home/chenlianghong/.ssh/sh:/home/chenlianghong/shell:/home/chenlianghong/.cache/.npm-global/bin:/home/chenlianghong/Programs/node-v16.15.0-linux-x64/bin:/home/chenlianghong/Programs/go1.18.1.linux-amd64/bin:/home/chenlianghong/.cache/.go-global/bin:/home/chenlianghong/.cache/.go-global/bin:/usr/local/bin:/usr/bin:/bin:/usr/games
+                  PROFILEHOME
+                          PWD : /home/chenlianghong/Projects/hardinfo
+             QT_ACCESSIBILITY : 1
+  QT_AUTO_SCREEN_SCALE_FACTOR : 0
+                 QT_IM_MODULE : ibus
+                        SHELL : /usr/bin/zsh
+             SHELL_SESSION_ID : 43bd853db9c440389fc9ad5875c38516
+                        SHLVL : 1
+                SSH_AGENT_PID : 1657
+                SSH_AUTH_SOCK : /tmp/ssh-9E3qpAXTK36K/agent.1595
+                         TERM : xterm
+                         USER : chenlianghong
+                     WINDOWID : 98566151
+                   XAUTHORITY : /home/chenlianghong/.Xauthority
+                 XCURSOR_SIZE : 24
+                XCURSOR_THEME : breeze_cursors
+          XDG_CURRENT_DESKTOP : KDE
+              XDG_RUNTIME_DIR : /run/user/1001
+                     XDG_SEAT : seat0
+                XDG_SEAT_PATH : /org/freedesktop/DisplayManager/Seat0
+            XDG_SESSION_CLASS : user
+          XDG_SESSION_DESKTOP : KDE
+               XDG_SESSION_ID : 4
+             XDG_SESSION_PATH : /org/freedesktop/DisplayManager/Session1
+             XDG_SESSION_TYPE : x11
+                     XDG_VTNR : 7
+                   XMODIFIERS : @im=ibus
+                            _ : /home/chenlianghong/Projects/hardinfo/./build/hardinfo
+                     HISTFILE : /home/chenlianghong/.zsh_history
+                     SAVEHIST : 100
+                      P9K_SSH : 0
+                    LS_COLORS : rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+                       GOROOT : /home/chenlianghong/Programs/go1.18.1.linux-amd64
+                       GOPATH : /home/chenlianghong/.cache/.go-global
+                      GOPROXY : https://goproxy.cn,direct
+                  GO111MODULE : on
+                    NODE_PATH : /lib/node_modules
+                          PS1 : %m%# > 
+                      P9K_TTY : old
+                     _P9K_TTY : /dev/pts/2
+
+Development
+-----------
+
+-Scripting Languages-
+        Gambas3 (gbr3) : Not found
+      Python (default) : Not found
+               Python2 : 2.7.18
+               Python3 : 3.9.2
+                  Perl : 5.32.1
+            Perl6 (VM) : Not found
+                 Perl6 : Not found
+                   PHP : 7.4.28
+                  Ruby : Not found
+                  Bash : 5.1.4(1)-release
+  JavaScript (Node.js) : 16.15.0
+                   awk : Not found
+-Compilers-
+         C (GCC) : 10.2.1
+       C (Clang) : Not found
+         D (dmd) : Not found
+  Gambas3 (gbc3) : Not found
+            Java : Not found
+      C♯ (mcs) : Not found
+            Vala : Not found
+   Haskell (GHC) : Not found
+      FreePascal : Not found
+              Go : 1.18.1 
+            Rust : Not found
+-Tools-
+         make : 4.3
+        ninja : 1.10.1
+          GDB : (Debian 10.1-1.7) 10.1.90.20210103-git
+         LLDB : Not found
+       strace : 5.10
+     valgrind : Not found
+        QMake : Not found
+        CMake : 3.18.4
+  Gambas3 IDE : Not found
+      Radare2 : Not found
+       ltrace : Not found
+   Powershell : Not found
+
+Users
+-----
+
+-Users-
+               root : root
+             daemon : daemon
+                bin : bin
+                sys : sys
+               sync : sync
+              games : games
+                man : man
+                 lp : lp
+               mail : mail
+               news : news
+               uucp : uucp
+              proxy : proxy
+           www-data : www-data
+             backup : backup
+               list : Mailing List Manager
+                irc : ircd
+              gnats : Gnats Bug-Reporting System (admin)
+             nobody : nobody
+               _apt
+   systemd-timesync : systemd Time Synchronization
+    systemd-network : systemd Network Management
+    systemd-resolve : systemd Resolver
+                tss : TPM software stack
+         messagebus
+        Debian-exim
+              uuidd
+      avahi-autoipd : Avahi autoip daemon
+             usbmux : usbmux daemon
+              rtkit : RealtimeKit
+            dnsmasq : dnsmasq
+              avahi : Avahi mDNS daemon
+  speech-dispatcher : Speech Dispatcher
+              pulse : PulseAudio daemon
+              saned
+             colord : colord colour management daemon
+            geoclue
+               sddm : Simple Desktop Display Manager
+                dev : dev
+   systemd-coredump : systemd Core Dumper
+               sshd
+      chenlianghong : lee
+           stunnel4
+               mate : mate
+       libvirt-qemu : Libvirt Qemu
+
+Groups
+------
+
+-Group-
+              root : 0
+            daemon : 1
+               bin : 2
+               sys : 3
+               adm : 4
+               tty : 5
+              disk : 6
+                lp : 7
+              mail : 8
+              news : 9
+              uucp : 10
+               man : 12
+             proxy : 13
+              kmem : 15
+           dialout : 20
+               fax : 21
+             voice : 22
+             cdrom : 24
+            floppy : 25
+              tape : 26
+              sudo : 27
+             audio : 29
+               dip : 30
+          www-data : 33
+            backup : 34
+          operator : 37
+              list : 38
+               irc : 39
+               src : 40
+             gnats : 41
+            shadow : 42
+              utmp : 43
+             video : 44
+              sasl : 45
+           plugdev : 46
+             staff : 50
+             games : 60
+             users : 100
+           nogroup : 65534
+  systemd-timesync : 101
+   systemd-journal : 102
+   systemd-network : 103
+   systemd-resolve : 104
+             input : 105
+               kvm : 106
+            render : 107
+           crontab : 108
+            netdev : 109
+               tss : 110
+        messagebus : 111
+       Debian-exim : 112
+             uuidd : 113
+               ssh : 114
+         bluetooth : 115
+          ssl-cert : 116
+     avahi-autoipd : 117
+             rtkit : 118
+               i2c : 119
+             avahi : 120
+           lpadmin : 121
+             pulse : 122
+      pulse-access : 123
+           scanner : 124
+             saned : 125
+            colord : 126
+           geoclue : 127
+              sddm : 128
+               dev : 1000
+  systemd-coredump : 999
+            nixbld : 30000
+            docker : 129
+         vboxusers : 130
+     chenlianghong : 1001
+          stunnel4 : 131
+              mate : 1002
+              rdma : 132
+           libvirt : 133
+      libvirt-qemu : 64055
+
+Devices
+*******
+
+
+System DMI
+----------
+
+-Product-
+           Name : Vostro 3650
+         Family : <s></s>
+         Vendor : Dell Inc.
+        Version : X00
+  Serial Number : (Not available; Perhaps try running HardInfo as root.)
+            SKU : Vostro 3650
+-BIOS-
+        Date : 04/25/2016
+      Vendor : Dell Inc.
+     Version : 3.2.3
+-Board-
+           Name : 0VGHXY
+         Vendor : Dell Inc.
+        Version : A01
+  Serial Number : (Not available; Perhaps try running HardInfo as root.)
+      Asset Tag : <s></s>
+-Chassis-
+         Vendor : Dell Inc.
+           Type : [3] Desktop
+        Version : Not Specified
+  Serial Number : (Not available; Perhaps try running HardInfo as root.)
+      Asset Tag : <s></s>
+
+Processor
+---------
+
+-Processors-
+         all	Summary	
+   -Package Information-
+                      Name : Intel Core i5-6400
+                  Topology : 1 physical processor; 4 cores; 4 threads
+        Logical CPU Config : 4x 3300.00 MHz
+   -Clocks-
+        800.00-3300.00 MHz : 4x
+   -Caches-
+               Level 1 (Data) : 4x 32KB (128KB), 8-way set-associative, 64 sets
+        Level 1 (Instruction) : 4x 32KB (128KB), 8-way set-associative, 64 sets
+            Level 2 (Unified) : 4x 256KB (1024KB), 4-way set-associative, 1024 sets
+            Level 3 (Unified) : 1x 6144KB (6144KB), 12-way set-associative, 8192 sets
+   -Socket Information-
+            Result : (Not available; Perhaps try running HardInfo as root.)
+        cpu0	0:0	Intel Core i5-6400	3300.00 MHz
+        cpu1	0:1	Intel Core i5-6400	3300.00 MHz
+        cpu2	0:2	Intel Core i5-6400	3300.00 MHz
+        cpu3	0:3	Intel Core i5-6400	3300.00 MHz
+
+Graphics Processors
+-------------------
+
+-GPUs-
+       card0 : <span background="#006fb8" color="#ffffff"><b> Dell </b></span> <span background="#006fb8" color="#ffffff"><b> Intel </b></span> HD Graphics 530
+   -Device Information-
+          Location : PCI/0000:00:02.0
+        DRM Device : /dev/dri/card0
+             Class : [0300] VGA compatible controller
+            Vendor : [8086] Intel Corporation
+            Device : [1912] HD Graphics 530
+           SVendor : [1028] Dell
+           SDevice : [06f9] (Unknown)
+          Revision : 06
+   -Clocks-
+              Core : 350.00-950.00 MHz
+            Memory : (Unknown)
+   -PCI Express-
+        Maximum Link Width : x255
+        Maximum Link Speed : 0.0 GT/s
+   -Driver-
+                In Use : i915
+        Kernel Modules : i915
+
+Monitors
+--------
+
+-Monitors-
+  card0-DP-1 : Dell 23.8″ DELL E2421HN
+   -Connection-
+                           DRM : card0-DP-1
+                        Status : connected enabled
+                   Signal Type : Digital
+                     Interface : [5] DisplayPort
+        Bits per Color Channel : 8
+            Speaker Allocation : (Unspecified)
+   -Output (Max)-
+        VESA EDID STD : 1920x1080@60Hz 53.0x30.0cm (24.0") progressive normal
+        VESA EDID DTD : 1920x1080@60Hz 52.7x29.6cm (23.8") progressive normal
+   -EDID Device-
+                  Vendor : [PNP:DEL] Dell
+                    Name : DELL E2421HN
+                   Model : [f128-43455242] 61736-1128616514
+                  Serial : 8C1NG93
+        Manufacture Date : Week 3 of 2021
+   -EDID Meta-
+               Data Size : 128 bytes
+                 Version : 1.4
+        Extension Blocks : 0
+             Extended to : (None)
+                Checksum : Ok 
+   -EDID Descriptors-
+        descriptor0 : ([00] detailed timing descriptor) {...}
+        descriptor1 : ([ff] display serial number) 8C1NG93
+        descriptor2 : ([fc] display name) DELL E2421HN
+        descriptor3 : ([fd] display range limits) 00 00 00 fd 00 38 4c 1e 53 11 00 0a 20 20 20 20 20 20 
+   -Detailed Timing Descriptors (DTD)-
+              dtd0 : 1920x1080@60Hz, 52.7x29.6cm (23.8") progressive normal (VESA EDID DTD)
+   -Established Timings Bitmap (ETB)-
+              etb0 : 720x400@70Hz 53.0x30.0cm (24.0") progressive normal
+              etb1 : 640x480@60Hz 53.0x30.0cm (24.0") progressive normal
+              etb2 : 640x480@75Hz 53.0x30.0cm (24.0") progressive normal
+              etb3 : 800x600@60Hz 53.0x30.0cm (24.0") progressive normal
+              etb4 : 800x600@75Hz 53.0x30.0cm (24.0") progressive normal
+              etb5 : 1024x768@60Hz 53.0x30.0cm (24.0") progressive normal
+              etb6 : 1024x768@75Hz 53.0x30.0cm (24.0") progressive normal
+              etb7 : 1280x1024@75Hz 53.0x30.0cm (24.0") progressive normal
+   -Standard Timings (STD)-
+              std0 : 1152x1536@75Hz 53.0x30.0cm (24.0") progressive normal
+              std1 : 1280x1024@60Hz 53.0x30.0cm (24.0") progressive normal
+              std2 : 1600x900@60Hz 53.0x30.0cm (24.0") progressive normal
+              std3 : 1920x1080@60Hz 53.0x30.0cm (24.0") progressive normal
+   -E-EDID Extension Blocks-
+        (Empty List)
+   -EIA/CEA-861 Data Blocks-
+        (Empty List)
+   -EIA/CEA-861 Short Audio Descriptors-
+        (Empty List)
+   -EIA/CEA-861 Short Video Descriptors-
+        (Empty List)
+   -DisplayID Timings-
+        (Empty List)
+   -DisplayID Strings-
+        (Empty List)
+   -Hex Dump-
+              Data : <tt>00ffffffffffff0010ac28f142524543
+                     031f0104a5351e78e215c5a75650a026
+                     115054a54b00714f8180a9c0d1c00101
+                     010101010101023a801871382d40582c
+                     45000f282100001e000000ff00384331
+                     4e4739330a2020202020000000fc0044
+                     454c4c204532343231484e0a000000fd
+                     00384c1e5311000a2020202020200010
+                     </tt>
+
+Memory Devices
+--------------
+
+-Memory Device List-
+                            SPD:*	8 GiB	DDR3 SDRAM
+   -Serial Presence Detect (SPD) Summary-
+                 Size : 8 GiB
+              Devices : 1
+        Types Present : [0x400] DDR3 SDRAM
+  SPD:0-0050<big><b>⚠</b></big>	SK hynix	8192 MiB	HMT41GU6AFR8A-PB  
+   -Serial Presence Detect (SPD)-
+                                  Source : 0-0050 (at24)
+                            SPD Revision : 1.3
+                             Form Factor : UDIMM (Unbuffered Long DIMM)
+                                    Type : DDR3-1600 (PC3-12800)
+                           Module Vendor : [002d] SK Hynix (former Hyundai Electronics)
+                             DRAM Vendor : [0000] (Unknown)
+                             Part Number : HMT41GU6AFR8A-PB  
+                                    Size : 8192 MiB
+        Manufacturing Date (Week / Year) : 11 / 2015
+                                   Ranks : 2
+                        IO Pins per Chip : 8
+                               Die count : 0 (Unspecified)
+                          Thermal Sensor : [00] Not present
+                      Supported Voltages : 1.35V 1.5V
+                 Supported CAS Latencies : 11 10 9 8 7 6 
+   -Timings-
+               tCL : 11
+              tRCD : 13.125ns
+               tRP : 13.125ns
+              tRAS : 3.125ns
+
+PCI Devices
+-----------
+
+-PCI Devices-
+  0000:00:00.0 : Dell Intel Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Host Bridge/DRAM Registers
+  0000:00:02.0 : Dell Intel HD Graphics 530
+  0000:00:14.0 : Dell Intel 100 Series/C230 Series Chipset Family USB 3.0 xHCI Controller
+  0000:00:14.2 : Dell Intel 100 Series/C230 Series Chipset Family Thermal Subsystem
+  0000:00:16.0 : Dell Intel 100 Series/C230 Series Chipset Family MEI Controller
+  0000:00:17.0 : Dell Intel Q170/Q150/B150/H170/H110/Z170/CM236 Chipset SATA Controller [AHCI Mode]
+  0000:00:1c.0 : Dell Intel 100 Series/C230 Series Chipset Family PCI Express Root Port
+  0000:00:1f.0 : Dell Intel H110 Chipset LPC/eSPI Controller
+  0000:00:1f.2 : Dell Intel 100 Series/C230 Series Chipset Family Power Management Controller
+  0000:00:1f.3 : Dell Intel 100 Series/C230 Series Chipset Family HD Audio Controller
+  0000:00:1f.4 : Dell Intel 100 Series/C230 Series Chipset Family SMBus
+  0000:01:00.0 : Dell Realtek RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
+
+USB Devices
+-----------
+
+-USB Devices-
+     001:001 : Linux 2.0 root hub
+     001:002 : (Unknown) USB2.0 HUB
+     001:003 : Realtek RTS5129 Card Reader Controller
+     001:004 : Xenta Gaming Mouse
+     001:005 : logitech Keyboard K120
+     002:001 : Linux 3.0 root hub
+
+Firmware
+--------
+
+-Firmware List-
+      Result : (Not available)
+
+Printers
+--------
+
+-Printers (CUPS)-
+  HP_LaserJet_MFP_M437_M443_NPI8217F7_
+
+Battery
+-------
+
+-No batteries-
+  No batteries found on this system
+
+Sensors
+-------
+
+-Temperature-
+          temp1	acpitz	27.80°C
+          temp2	acpitz	29.80°C
+          temp1	pch_skylake	46.50°C
+   Package id 0	coretemp	41.00°C
+         Core 0	coretemp	35.00°C
+         Core 1	coretemp	37.00°C
+         Core 2	coretemp	40.00°C
+         Core 3	coretemp	36.00°C
+  thermal_zone2	thermal	46.50°C
+  thermal_zone0	thermal	27.80°C
+  thermal_zone3	thermal	40.00°C
+  thermal_zone1	thermal	29.80°C
+-Fan Speed-
+        fan1	dell_smm	500.00 RPM
+        fan2	dell_smm	708.00 RPM
+-Drive Temperature-
+  FORESEE 256GB SSD	udisks2	48.00°C
+
+Input Devices
+-------------
+
+-Input Devices-
+                             Sleep Button	Keyboard	
+                             Power Button	Keyboard	
+                             Power Button	Keyboard	
+                                Video Bus	Keyboard	
+                         LXD Gaming Mouse	Keyboard	
+                         LXD Gaming Mouse	Mouse	
+        LXD Gaming Mouse Consumer Control	Keyboard	
+          LXD Gaming Mouse System Control	Keyboard	
+                    Logitech USB Keyboard	Keyboard	logitech
+   Logitech USB Keyboard Consumer Control	Keyboard	logitech
+     Logitech USB Keyboard System Control	Keyboard	logitech
+                               PC Speaker	Speaker	
+                       HDA Digital PCBeep	Keyboard	
+                   HDA Intel PCH Rear Mic	Audio	Intel
+                       HDA Intel PCH Line	Audio	Intel
+              HDA Intel PCH Headphone Mic	Audio	Intel
+                   HDA Intel PCH Line Out	Audio	Intel
+              HDA Intel PCH HDMI/DP,pcm:3	Audio	Intel
+              HDA Intel PCH HDMI/DP,pcm:7	Audio	Intel
+              HDA Intel PCH HDMI/DP,pcm:8	Audio	Intel
+              HDA Intel PCH HDMI/DP,pcm:9	Audio	Intel
+             HDA Intel PCH HDMI/DP,pcm:10	Audio	Intel
+
+Storage
+-------
+
+-UDisks2-
+         sda	 FORESEE 256GB SSD	238.5 GiB
+
+Resources
+---------
+
+-I/O Ports-
+        <tt>0000-0000 </tt> : PCI Bus 0000:00
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+        <tt>0000-0000 </tt> : PCI Bus 0000:00
+        <tt>0000-0000 </tt> : PCI Bus 0000:00
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+      <tt>  0000-0000 </tt> : pnp 00:01
+    <tt>    0000-0000 </tt> : pnp 00:01
+  <tt>      0000-0000 </tt> : pnp 00:01
+-Memory-
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+      <tt>  00000000-00000000 </tt> : Kernel bss
+        <tt>00000000-00000000 </tt> : System RAM
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+  <tt>      00000000-00000000 </tt> : iTCO_wdt iTCO_wdt
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+      <tt>  00000000-00000000 </tt> : Kernel bss
+        <tt>00000000-00000000 </tt> : System RAM
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+        <tt>00000000-00000000 </tt> : System RAM
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+  <tt>      00000000-00000000 </tt> : iTCO_wdt iTCO_wdt
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+        <tt>00000000-00000000 </tt> : System RAM
+      <tt>  00000000-00000000 </tt> : Kernel bss
+        <tt>00000000-00000000 </tt> : System RAM
+      <tt>  00000000-00000000 </tt> : Kernel bss
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+      <tt>  00000000-00000000 </tt> : Kernel bss
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+        <tt>00000000-00000000 </tt> : System RAM
+      <tt>  00000000-00000000 </tt> : Kernel bss
+        <tt>00000000-00000000 </tt> : System RAM
+      <tt>  00000000-00000000 </tt> : Kernel bss
+    <tt>    00000000-00000000 </tt> : pnp 00:05
+        <tt>00000000-00000000 </tt> : System RAM
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+      <tt>  00000000-00000000 </tt> : Kernel bss
+-DMA-
+  <tt> 4</tt> : cascade
+
+Network
+*******
+
+
+Interfaces
+----------
+
+-Network Interfaces-
+           lo	346.65MiB	346.65MiB	127.0.0.1
+       enp1s0	479.25MiB	326.86MiB	192.168.1.68
+      docker0	0.00MiB	0.57MiB	172.17.0.1
+  vethfca22ea	0.00MiB	0.60MiB	
+
+IP Connections
+--------------
+
+-Connections-
+             127.0.0.1:25	LISTEN	0.0.0.0:*	tcp
+            0.0.0.0:47200	LISTEN	0.0.0.0:*	tcp
+             0.0.0.0:8080	LISTEN	0.0.0.0:*	tcp
+           127.0.0.1:5939	LISTEN	0.0.0.0:*	tcp
+          127.0.0.1:45651	LISTEN	0.0.0.0:*	tcp
+               0.0.0.0:22	LISTEN	0.0.0.0:*	tcp
+            127.0.0.1:631	LISTEN	0.0.0.0:*	tcp
+       192.168.1.68:43450	CLOSE_WAIT	120.24.99.177:37237	tcp
+       192.168.1.68:43242	CLOSE_WAIT	120.24.99.177:37237	tcp
+       192.168.1.68:49454	ESTABLISHED	192.168.1.69:139	tcp
+       192.168.1.68:47946	ESTABLISHED	118.31.74.244:8082	tcp
+       192.168.1.68:42222	ESTABLISHED	192.168.1.68:8080	tcp
+       192.168.1.68:52566	ESTABLISHED	142.250.66.46:443	tcp
+       192.168.1.68:43392	CLOSE_WAIT	120.24.99.177:37237	tcp
+       192.168.1.68:54384	ESTABLISHED	180.163.151.162:443	tcp
+       192.168.1.68:53436	ESTABLISHED	162.247.242.31:443	tcp
+       192.168.1.68:42942	CLOSE_WAIT	120.24.99.177:37237	tcp
+       192.168.1.68:42992	CLOSE_WAIT	120.24.99.177:37237	tcp
+       192.168.1.68:43342	CLOSE_WAIT	120.24.99.177:37237	tcp
+       192.168.1.68:41526	ESTABLISHED	140.82.112.25:443	tcp
+       192.168.1.68:43956	TIME_WAIT	20.205.243.168:443	tcp
+       192.168.1.68:43142	CLOSE_WAIT	120.24.99.177:37237	tcp
+       192.168.1.68:52442	ESTABLISHED	101.201.107.48:443	tcp
+       192.168.1.68:54282	ESTABLISHED	142.250.68.42:443	tcp
+       192.168.1.68:43458	ESTABLISHED	34.237.73.95:443	tcp
+       192.168.1.68:34410	TIME_WAIT	128.1.112.157:443	tcp
+       192.168.1.68:49064	ESTABLISHED	142.250.204.136:443	tcp
+       192.168.1.68:43192	CLOSE_WAIT	120.24.99.177:37237	tcp
+       192.168.1.68:52442	ESTABLISHED	101.201.107.48:443	tcp
+       192.168.1.68:54386	ESTABLISHED	180.163.151.162:443	tcp
+       192.168.1.68:43042	CLOSE_WAIT	120.24.99.177:37237	tcp
+       192.168.1.68:42884	CLOSE_WAIT	120.24.99.177:37237	tcp
+       192.168.1.68:52568	TIME_WAIT	142.250.66.46:443	tcp
+           127.0.0.1:8080	ESTABLISHED	127.0.0.1:56296	tcp
+       192.168.1.68:49730	ESTABLISHED	185.199.109.153:443	tcp
+       192.168.1.68:48914	ESTABLISHED	142.251.42.238:443	tcp
+       192.168.1.68:44252	TIME_WAIT	20.205.243.168:443	tcp
+       192.168.1.68:38488	ESTABLISHED	104.243.17.131:443	tcp
+       192.168.1.68:43500	ESTABLISHED	120.24.99.177:37237	tcp
+       192.168.1.68:52440	ESTABLISHED	142.250.68.74:443	tcp
+          127.0.0.1:56296	ESTABLISHED	127.0.0.1:8080	tcp
+       192.168.1.68:43292	CLOSE_WAIT	120.24.99.177:37237	tcp
+        192.168.1.68:8080	ESTABLISHED	192.168.1.68:42222	tcp
+       192.168.1.68:47202	ESTABLISHED	172.65.252.9:443	tcp
+       192.168.1.68:43092	CLOSE_WAIT	120.24.99.177:37237	tcp
+                   ::1:25	LISTEN	:::*	tcp6
+           127.0.0.1:6942	LISTEN	:::*	tcp6
+          127.0.0.1:63342	LISTEN	:::*	tcp6
+                  :::1716		:::*	udp6
+                    :::22	LISTEN	:::*	tcp6
+                  ::1:631	LISTEN	:::*	tcp6
+  240e:36a:1487:630:49378	TIME_WAIT	2600:1901:0:47fc:::443	tcp6
+       192.168.1.68:44960	ESTABLISHED	192.168.1.132:1716	tcp6
+  240e:36a:1487:630:48342	ESTABLISHED	2404:6800:4008:c07:5228	tcp6
+  240e:36a:1487:630:44146	ESTABLISHED	2606:4700:3033::ac4:443	tcp6
+  240e:36a:1487:630:34492	ESTABLISHED	240e:e1:a802:1::1c:443	tcp6
+  240e:36a:1487:630:40472	ESTABLISHED	2606:4700:3036::681:443	tcp6
+         224.0.0.251:5353		0.0.0.0:*	udp
+         224.0.0.251:5353		0.0.0.0:*	udp
+         224.0.0.251:5353		0.0.0.0:*	udp
+         224.0.0.251:5353		0.0.0.0:*	udp
+             0.0.0.0:5353		0.0.0.0:*	udp
+            0.0.0.0:38234		0.0.0.0:*	udp
+              0.0.0.0:631		0.0.0.0:*	udp
+       192.168.1.68:42716		0.0.0.0:*	udp
+         172.17.0.1:45785		0.0.0.0:*	udp
+                  :::5353		:::*	udp6
+  fe80::821e:1167:2b1:546		:::*	udp6
+                  :::1716		:::*	udp6
+                 :::36158		:::*	udp6
+
+Routing Table
+-------------
+
+-IP routing table-
+  0.0.0.0 / 192.168.1.128	0.0.0.0	UG	enp1s0
+    169.254.0.0 / 0.0.0.0	255.255.0.0	U	enp1s0
+     172.17.0.0 / 0.0.0.0	255.255.0.0	U	docker0
+    192.168.1.0 / 0.0.0.0	255.255.255.0	U	enp1s0
+
+ARP Table
+---------
+
+-ARP Table-
+    192.168.1.1	3c:cd:57:f8:e3:84	enp1s0
+  192.168.1.240	16:25:69:cf:5c:a3	enp1s0
+  192.168.1.218	00:07:3e:92:4a:50	enp1s0
+  192.168.1.125	04:6c:59:10:42:62	enp1s0
+   192.168.1.15	a2:f5:49:18:8c:4b	enp1s0
+   192.168.1.69	00:0b:2f:18:4b:60	enp1s0
+  192.168.1.128	5e:82:fe:be:6c:51	enp1s0
+  192.168.1.149	04:0e:3c:82:17:f7	enp1s0
+  192.168.1.132	b6:55:9b:09:52:b6	enp1s0
+
+DNS Servers
+-----------
+
+-Name Servers-
+                           8.8.8.8 : dns.google
+  fe80::3ecd:57ff:fef8:e384%enp1s0
+
+Statistics
+----------
+
+-IP-
+    <b> </b> : Forwarding: 1
+    <b> </b> : 917480 total packets received
+    <b> </b> : 0 forwarded
+    <b> </b> : 0 incoming packets discarded
+    <b> </b> : 913393 incoming packets delivered
+    <b> </b> : 741567 requests sent out
+    <b> </b> : 30 dropped because of missing route
+    <b> </b> : 211 reassemblies required
+    <b> </b> : 103 packets reassembled ok
+    <b> </b> : 2 fragments received ok
+    <b> </b> : 4 fragments created
+-ICMP-
+    <b> </b> : 0 ICMP messages received
+    <b> </b> : 0 input ICMP message failed
+    <b> </b> : ICMP input histogram:
+    <b> </b> : 40963 ICMP messages sent
+    <b> </b> : 0 ICMP messages failed
+    <b> </b> : ICMP output histogram:
+    <b> </b> : destination unreachable: 40963
+-ICMPMSG-
+    <b> </b> : OutType3: 40963
+-TCP-
+    <b> </b> : 273024 active connection openings
+    <b> </b> : 309 passive connection openings
+    <b> </b> : 255685 failed connection attempts
+    <b> </b> : 6175 connection resets received
+    <b> </b> : 26 connections established
+    <b> </b> : 1105632 segments received
+    <b> </b> : 1159331 segments sent out
+    <b> </b> : 303 segments retransmitted
+    <b> </b> : 10 bad segments received
+    <b> </b> : 256997 resets sent
+-UDP-
+    <b> </b> : 167919 packets received
+    <b> </b> : 40963 packets to unknown port received
+    <b> </b> : 0 packet receive errors
+    <b> </b> : 23199 packets sent
+    <b> </b> : 0 receive buffer errors
+    <b> </b> : 0 send buffer errors
+    <b> </b> : IgnoredMulti: 18081
+-UDPLITE-
+-TCPEXT-
+    <b> </b> : 4 resets received for embryonic SYN_RECV sockets
+    <b> </b> : 2822 TCP sockets finished time wait in fast timer
+    <b> </b> : 7 packetes rejected in established connections because of timestamp
+    <b> </b> : 15065 delayed acks sent
+    <b> </b> : 11 delayed acks further delayed because of locked socket
+    <b> </b> : Quick ack mode was activated 137 times
+    <b> </b> : 222422 packet headers predicted
+    <b> </b> : 130811 acknowledgments not containing data payload received
+    <b> </b> : 93885 predicted acknowledgments
+    <b> </b> : TCPSackRecovery: 66
+    <b> </b> : Detected reordering 196 times using SACK
+    <b> </b> : Detected reordering 12 times using time stamp
+    <b> </b> : 16 congestion windows fully recovered without slow start
+    <b> </b> : 12 congestion windows partially recovered using Hoe heuristic
+    <b> </b> : TCPDSACKUndo: 13
+    <b> </b> : 8 congestion windows recovered without slow start after partial ack
+    <b> </b> : TCPLostRetransmit: 54
+    <b> </b> : TCPSackFailures: 1
+    <b> </b> : 1 timeouts in loss state
+    <b> </b> : 69 fast retransmits
+    <b> </b> : 5 retransmits in slow start
+    <b> </b> : TCPTimeouts: 87
+    <b> </b> : TCPLossProbes: 156
+    <b> </b> : TCPLossProbeRecovery: 15
+    <b> </b> : TCPSackRecoveryFail: 6
+    <b> </b> : TCPBacklogCoalesce: 1907
+    <b> </b> : TCPDSACKOldSent: 139
+    <b> </b> : TCPDSACKOfoSent: 5
+    <b> </b> : TCPDSACKRecv: 125
+    <b> </b> : TCPDSACKOfoRecv: 2
+    <b> </b> : 137 connections reset due to unexpected data
+    <b> </b> : 478 connections reset due to early user close
+    <b> </b> : 8 connections aborted due to timeout
+    <b> </b> : TCPDSACKIgnoredNoUndo: 68
+    <b> </b> : TCPSackMerged: 2
+    <b> </b> : TCPSackShiftFallback: 228
+    <b> </b> : TCPRcvCoalesce: 120817
+    <b> </b> : TCPOFOQueue: 7325
+    <b> </b> : TCPOFOMerge: 5
+    <b> </b> : TCPChallengeACK: 15
+    <b> </b> : TCPSYNChallenge: 15
+    <b> </b> : TCPAutoCorking: 12699
+    <b> </b> : TCPFromZeroWindowAdv: 171
+    <b> </b> : TCPToZeroWindowAdv: 171
+    <b> </b> : TCPWantZeroWindowAdv: 1010
+    <b> </b> : TCPOrigDataSent: 325469
+    <b> </b> : TCPHystartTrainDetect: 34
+    <b> </b> : TCPHystartTrainCwnd: 963
+    <b> </b> : TCPACKSkippedChallenge: 1
+    <b> </b> : TCPWinProbe: 41
+    <b> </b> : TCPKeepAlive: 78691
+    <b> </b> : TCPDelivered: 340732
+    <b> </b> : TCPAckCompressed: 1750
+    <b> </b> : TcpTimeoutRehash: 83
+    <b> </b> : TcpDuplicateDataRehash: 3
+    <b> </b> : TCPDSACKRecvSegs: 129
+-IPEXT-
+    <b> </b> : InMcastPkts: 58393
+    <b> </b> : OutMcastPkts: 5820
+    <b> </b> : InBcastPkts: 18153
+    <b> </b> : OutBcastPkts: 18
+    <b> </b> : InOctets: 710513796
+    <b> </b> : OutOctets: 639701525
+    <b> </b> : InMcastOctets: 14570744
+    <b> </b> : OutMcastOctets: 1211324
+    <b> </b> : InBcastOctets: 5243743
+    <b> </b> : OutBcastOctets: 5198
+    <b> </b> : InNoECTPkts: 981435
+
+Shared Directories
+------------------
+
+-SAMBA-
+    printers : /var/spool/samba
+      print$ : /var/lib/samba/printers
+-NFS-
+  No NFS exports
