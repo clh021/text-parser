@@ -21,111 +21,63 @@ return {
 ## autoList
 
 ```javascript
-return [{
-    class:"CPU 规格",
-    name:"CPU 型号",
-    matchDes:"Inter酷睿处理器",
-    matchMethod:"SC",
-    matchVal:"Intel(R) Core(TM)",
-    dataConf:{
-        type:"cmd",
-        cmd:`cat /proc/cpuinfo | grep "model name" | cut -f2 -d: | uniq -c`,
-    },
-    checked: null,
-    optional: false,
-    val: null
-},{
-    class:"CPU 规格",
-    name:"CPU 核心数",
-    matchDes:"至少四核心",
-    matchMethod:"GE",
-    matchVal:4,
-    dataConf:{
-        type:"javascript",
-        cmd:`navigator.hardwareConcurrency`,
-    },
-    checked: null,
-    optional: false,
-    val: null
-},{
-    class:"CPU 规格",
-    name:"CPU 线程数",
-    matchDes:"至少四线程",
-    matchMethod:"GE",
-    matchVal:4,
-    dataConf:{
-        type:"cmd",
-        cmd:`cat /proc/cpuinfo |grep processor|wc -l`,
-    },
-    checked: null,
-    optional: false,
-    val: null
-},{
-    class:"内存规格",
-    name:"内存配置容量",
-    matchDes:"内存至少8G",
-    matchMethod:"GE",
-    matchVal:8,
-    dataConf:{
-        type:"cmd",
-        cmd:`lsmem -b | grep online | awk '{print $4/1024/1024/1024}'`,
-        pipes: [],
-    },
-    checked: null,
-    optional: false,
-    val: null
-},{
-    class:"内存规格",
-    name:"内存配置容量",
-    matchDes:"内存至少8G",
-    matchMethod:"GE",
-    matchVal:8,
-    dataConf:{
-        type:"cmd",
-        cmd:`lsmem -b | grep online | awk '{print $4/1024/1024/1024}'`,
-        pipes: {},
-    },
-    checked: null,
-    optional: false,
-    val: null
-},{
-    class:"显示规格",
-    name:"显示器分辨率",
-    matchDes:"显示器分辨率",
-    matchMethod:"SC",
-    matchVal:"1920x1080",
-    dataConf:{
-        type:"hardinfoObj",
-        cmd:`Computer.Summary.Display`,
-        pipes: [
-            ["split","\n"],
-            ["contain","Resolution"],
-            ["join","\n"],
-            ["split",":"],
-            ["SC","x"],
-            ["join","\n"],
-        ],
-    },
-    checked: null,
-    optional: false,
-    val: null
-},{
-    class:"内存规格",
-    name:"内存配置容量",
-    matchDes:"内存至少18G",
-    matchMethod:"GE",
-    matchVal:18,
-    dataConf:{
-        type:"cmd",
-        cmd:`lsmem -b | grep online | awk '{print $4/1024/1024/1024}'`,
-    },
-    checked: null,
-    optional: false,
-    val: null
-}];
-```
+window.parseHardinfoTxt=(hardinfoTxt) => {
+  let resultObj = {};
+  // getTitleFunc : (areaStr) => {title:titleStr, content: contentStr};
+  let fixTitleToMap = (arr, getTitleFunc) => {
+    let map = {};
+    for (let index = 1; index < arr.length; index++) {
+      let prevArr = arr[index-1].split("\n");
+      let mapEle = getTitleFunc(prevArr[prevArr.length - 1] +"\n"+ arr[index]);
+      map[mapEle.title] = mapEle.content;
+    }
+    return map;
+  }
+  let txtToMap = (txt, splitStr, getTitleFunc) => {
+    return fixTitleToMap(txt.split(splitStr), getTitleFunc);
+  }
 
-```javascript
+  // 末尾增加多个换行以帮助解析去除块与块的标题间隙
+  let hardinfoTxtWithLastfix = hardinfoTxt+"\n\n\n\n\n\n";
+
+  // 根据 下一行是 ***** 来断定一级标题
+  resultObj = txtToMap(hardinfoTxtWithLastfix, "\n*", (areaStr) => {
+    let lineArr = areaStr.split("\n")
+      .filter(e => e.length > 0)
+      .filter(e => !e.startsWith("*"));
+    lineArr.pop(1);// 移除最后一个元素 下一个块标题
+    return {title: lineArr[0], content:lineArr.slice(1).join("\n")}
+  });
+
+  // 根据 下一行是 ----- 来断定二级标题
+  for (const [title, content] of Object.entries(resultObj)) {
+    resultObj[title] = txtToMap(content, "\n--", (areaStr) => {
+      let lineArr = areaStr.split("\n")
+        .filter(e => !e.startsWith("--"));
+      lineArr.pop(1);// 移除最后一个元素 下一个块标题
+      return {title: lineArr[0], content:lineArr.slice(1).join("\n")}
+    })
+  }
+
+  // 根据 当前行是 -[title]- 来断定三级标题
+  for (const [title, titleObj] of Object.entries(resultObj)) {
+    for (const [subtitle, subtitleObj] of Object.entries(titleObj)) {
+      // debugger
+      resultObj[title][subtitle] = txtToMap(subtitleObj, "-\n", (areaStr) => {
+        let lineArr = areaStr.split("\n");
+        lineArr.pop(1);// 移除最后一个元素 下一个块标题
+        return {title: lineArr[0].substring(1), content:lineArr.slice(1).join("\n")}
+      })
+    }
+  }
+
+  // 进一步数据分析应该在具体使用数据的模块来处理:
+  // - 各个模块之间的数据格式和层级都不一样
+  // - 部分数据的 key:val 中 key 作为表格元素有重复，JSON 处理会丢失数据
+
+  return resultObj;
+}
+
 function getDetectionValueByPipeMethod(method, data, args) {
     let shouldType = "";
     let val = data;
