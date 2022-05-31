@@ -20,6 +20,9 @@ return {
 
 ## autoList
 
+- 每一个函数解决一个问题
+- 每一次处理不能破坏数据本身
+
 ```javascript
 window.parseHardinfoTxt=(hardinfoTxt) => {
   let resultObj = {};
