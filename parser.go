@@ -14,6 +14,32 @@ import (
 	"github.com/linakesi/lnksutils"
 )
 
+func ParseTextFormFile(source string) string {
+	if !lnksutils.IsFileExist(source) {
+		fmt.Printf("Error: file not found: %+v\n", source)
+		os.Exit(-1)
+	}
+	content, err := ioutil.ReadFile(source)
+	if err != nil {
+		log.Fatal(err)
+		os.Exit(-1)
+	}
+	return string(content)
+}
+
+func ParseTextFormCommand(cmdStr string) string {
+	var outbuf, errbuf strings.Builder
+	cmd := exec.Command(cmdStr)
+	cmd.Stdout = &outbuf
+	cmd.Stderr = &errbuf
+	err := cmd.Run()
+	if err != nil {
+		fmt.Println("Error: cmd run error:", err)
+		os.Exit(-1)
+	}
+	return outbuf.String()
+}
+
 // fmt.printf
 func ParseText(configs config.Config) {
 	// fmt.Printf("%+v \n", text)
@@ -22,28 +48,9 @@ func ParseText(configs config.Config) {
 		fmt.Printf("%+v\n", conf)
 		switch conf.FormType {
 		case "file":
-			if lnksutils.IsFileExist(conf.FormSource) {
-				content, err := ioutil.ReadFile(conf.FormSource)
-				if err != nil {
-					log.Fatal(err)
-				}
-				conf.Text = string(content)
-			} else {
-				fmt.Printf("%+v 文件不存在\n", conf.FormSource)
-			}
+			conf.Text = ParseTextFormFile(conf.FormSource)
 		case "command":
-			var outbuf, errbuf strings.Builder
-			var cmd *exec.Cmd
-			cmd = exec.Command(conf.FormSource)
-			cmd.Stdout = &outbuf
-			cmd.Stderr = &errbuf
-			err := cmd.Run()
-			if err != nil {
-				fmt.Println("RUN error:", err)
-				os.Exit(-1)
-				return
-			}
-			conf.Text = outbuf.String()
+			conf.Text = ParseTextFormCommand(conf.FormSource)
 		default:
 			fmt.Printf("Error: Do not support formType '%s'.\n", conf.FormType)
 		}
@@ -51,8 +58,8 @@ func ParseText(configs config.Config) {
 		txtArr := []string{conf.Text}
 
 		for _, p := range conf.Pipes {
-			fmt.Printf("%T %+v \t", p.Cmd, p.Cmd)
-			fmt.Printf("%T %+v \n", p.Params, p.Params)
+			// fmt.Printf("%T %+v \t", p.Cmd, p.Cmd)
+			// fmt.Printf("%T %+v \n", p.Params, p.Params)
 			po := pipes.PipeObj{}
 			meth := reflect.ValueOf(po).MethodByName(p.Cmd)
 			if meth.IsValid() {
