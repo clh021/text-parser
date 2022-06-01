@@ -6,12 +6,12 @@
             {"cmd":"TitleByNextLineStartWith", "params": ["**"]},
             {"cmd":"TitleByNextLineStartWith", "params": ["--"]},
             {"cmd":"TitleByStartwith", "params": ["-"]},
-            {"cmd":"split", "params": ["\n"]},
-            {"cmd":"contain", "params": ["Resolution"]},
-            {"cmd":"join", "params": ["\n"]},
-            {"cmd":"split", "params": [":"]},
+            {"cmd":"Split", "params": ["\n"]},
+            {"cmd":"Contain", "params": ["Resolution"]},
+            {"cmd":"Join", "params": ["\n"]},
+            {"cmd":"Split", "params": [":"]},
             {"cmd":"SC", "params": ["x"]},
-            {"cmd":"join", "params": ["\n"]}
+            {"cmd":"Join", "params": ["\n"]}
         ]
     },
     "lshwCmd": {
