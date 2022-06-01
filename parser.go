@@ -45,7 +45,7 @@ func ParseText(configs config.Config) {
 			}
 			conf.Text = outbuf.String()
 		default:
-			fmt.Printf(" Do not support formType '%s'.\n", conf.FormType)
+			fmt.Printf("Error: Do not support formType '%s'.\n", conf.FormType)
 		}
 
 		txtArr := []string{conf.Text}
@@ -62,7 +62,7 @@ func ParseText(configs config.Config) {
 				)
 				fmt.Printf("%+v", res)
 			} else {
-				fmt.Printf("Error: PipeMethod Not Support Now: \"%+v\".\n", p.Cmd)
+				fmt.Printf("Error: Do not Support PipeMethod '%+v'.\n", p.Cmd)
 			}
 		}
 		// callback FuncHandle by string(funcName)
