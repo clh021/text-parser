@@ -1,3 +1,5 @@
 package pipes
 
-type PipeObj struct{}
+type PipeObj struct {
+	lastArr []string
+}

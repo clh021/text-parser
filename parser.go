@@ -60,15 +60,15 @@ func ParseText(configs config.Config) {
 		for _, p := range conf.Pipes {
 			// fmt.Printf("%T %+v \t", p.Cmd, p.Cmd)
 			// fmt.Printf("%T %+v \n", p.Params, p.Params)
-			po := pipes.PipeObj{}
+			po := &pipes.PipeObj{}
 			meth := reflect.ValueOf(po).MethodByName(p.Cmd)
 			if !meth.IsValid() {
 				fmt.Printf("Error: Do not Support PipeMethod '%+v'.\n", p.Cmd)
 			}
 			result := meth.Call([]reflect.Value{
 				reflect.ValueOf(p.Params),
-				reflect.ValueOf(&txtArr)},
-			)
+				reflect.ValueOf(txtArr),
+			})
 			fmt.Printf("%+v", result)
 			err := result[0].Interface() // 返回的是多个值
 			if err == nil {
