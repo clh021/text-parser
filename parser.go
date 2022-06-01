@@ -1,7 +1,6 @@
 package textParser
 
 import (
-	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -11,33 +10,13 @@ import (
 	"strings"
 
 	"github.com/clh021/text-parser/config"
+	"github.com/clh021/text-parser/pipes"
 	"github.com/linakesi/lnksutils"
 )
-
-type stubMapping map[string]interface{}
-
-var StubStorage = stubMapping{}
-
-func Call(funcName string, params ...interface{}) (result interface{}, err error) {
-	f := reflect.ValueOf(StubStorage[funcName])
-	if len(params) != f.Type().NumIn() {
-		err = errors.New("The number of params is out of index.")
-		return
-	}
-	in := make([]reflect.Value, len(params))
-	for k, param := range params {
-		in[k] = reflect.ValueOf(param)
-	}
-	var res []reflect.Value
-	res = f.Call(in)
-	result = res[0].Interface()
-	return
-}
 
 // fmt.printf
 func ParseText(configs config.Config) {
 	// fmt.Printf("%+v \n", text)
-
 	for name, conf := range configs {
 		fmt.Println(name, "------>>>")
 		fmt.Printf("%+v\n", conf)
@@ -68,9 +47,23 @@ func ParseText(configs config.Config) {
 		default:
 			fmt.Printf(" Do not support formType '%s'.\n", conf.FormType)
 		}
+
+		txtArr := []string{conf.Text}
+
 		for _, p := range conf.Pipes {
-			fmt.Printf("%+v \t", p.Cmd)
-			fmt.Printf("%+v \n", p.Params)
+			fmt.Printf("%T %+v \t", p.Cmd, p.Cmd)
+			fmt.Printf("%T %+v \n", p.Params, p.Params)
+			po := pipes.PipeObj{}
+			meth := reflect.ValueOf(po).MethodByName(p.Cmd)
+			if meth.IsValid() {
+				res := meth.Call([]reflect.Value{
+					reflect.ValueOf(p.Params),
+					reflect.ValueOf(txtArr)},
+				)
+				fmt.Printf("%+v", res)
+			} else {
+				fmt.Printf("Error: PipeMethod Not Support Now: \"%+v\".\n", p.Cmd)
+			}
 		}
 		// callback FuncHandle by string(funcName)
 	}
