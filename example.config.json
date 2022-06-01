@@ -3,6 +3,9 @@
         "formType": "file",
         "formSource":"filename.text",
         "pipes":[
+            {"cmd":"TitleByNextLineStartWith", "params": ["**"]},
+            {"cmd":"TitleByNextLineStartWith", "params": ["--"]},
+            {"cmd":"TitleByStartwith", "params": ["-"]},
             {"cmd":"split", "params": ["\n"]},
             {"cmd":"contain", "params": ["Resolution"]},
             {"cmd":"join", "params": ["\n"]},
