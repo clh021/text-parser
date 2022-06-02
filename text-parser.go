@@ -1,11 +1,10 @@
 package textParser
 
 import (
-	"fmt"
-	"os"
 	"path/filepath"
 
 	"github.com/clh021/text-parser/config"
+	"github.com/clh021/text-parser/lib"
 	"github.com/clh021/text-parser/log"
 	"github.com/linakesi/lnksutils"
 )
@@ -23,30 +22,21 @@ func WaitFile(file string) bool {
 	return lnksutils.IsFileExist(file)
 }
 
-func GetProgramPath() string {
-	ex, err := os.Executable()
-	if err == nil {
-		return filepath.Dir(ex)
-	}
-
-	exReal, err := filepath.EvalSymlinks(ex)
-	if err != nil {
-		panic(err)
-	}
-	return filepath.Dir(exReal)
-}
-
 func Run() {
 	log.SetLog()
-	file := filepath.Join(GetProgramPath(), "config.json")
+	currentPath, err := lib.GetProgramPath()
+	if err != nil {
+		log.Panic(err)
+	}
+	file := filepath.Join(currentPath, "config.json")
 	if WaitFile(file) {
 		configs, err := config.LoadConfig(file)
 		if err != nil {
-			panic(err)
+			log.Panic(err)
 		}
 		// fmt.Printf("%+v", configs)
 		ParseText(*configs)
 	} else {
-		fmt.Println("not exist file")
+		log.Error("not exist file")
 	}
 }
