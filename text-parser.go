@@ -36,6 +36,7 @@ func GetProgramPath() string {
 }
 
 func Run() {
+	SetLog()
 	file := filepath.Join(GetProgramPath(), "config.json")
 	if WaitFile(file) {
 		configs, err := config.LoadConfig(file)

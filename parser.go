@@ -75,10 +75,10 @@ func ParseText(configs config.Config) {
 			} else {
 				fmt.Printf("Error calling %s: %v", p.Cmd, err)
 			}
-			if conf.Debug {
-				// fmt.Printf("%+v", po.GetStr())
-				fmt.Printf("%+v", po.GetArr())
-			}
+			// if conf.Debug {
+			// fmt.Printf("%+v", po.GetStr())
+			// fmt.Printf("%+v", po.GetArr())
+			// }
 		}
 	}
 }
