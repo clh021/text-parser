@@ -55,26 +55,29 @@ func ParseText(configs config.Config) {
 			fmt.Printf("Error: Do not support formType '%s'.\n", conf.FormType)
 		}
 
-		txtArr := []string{conf.Text}
+		po := &pipes.PipeObj{}
+		po.Start(conf.Text)
 
 		for _, p := range conf.Pipes {
 			// fmt.Printf("%T %+v \t", p.Cmd, p.Cmd)
 			// fmt.Printf("%T %+v \n", p.Params, p.Params)
-			po := &pipes.PipeObj{}
 			meth := reflect.ValueOf(po).MethodByName(p.Cmd)
 			if !meth.IsValid() {
 				fmt.Printf("Error: Do not Support PipeMethod '%+v'.\n", p.Cmd)
 			}
 			result := meth.Call([]reflect.Value{
 				reflect.ValueOf(p.Params),
-				reflect.ValueOf(txtArr),
 			})
 			fmt.Printf("%+v", result)
-			err := result[0].Interface() // 返回的是多个值
+			err := result[0].Interface() // result 返回的是多个值
 			if err == nil {
 				fmt.Println("No error returned by", p.Cmd)
 			} else {
 				fmt.Printf("Error calling %s: %v", p.Cmd, err)
+			}
+			if conf.Debug {
+				// fmt.Printf("%+v", po.GetStr())
+				fmt.Printf("%+v", po.GetArr())
 			}
 		}
 	}
