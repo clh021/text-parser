@@ -1,4 +1,4 @@
-package textParser
+package log
 
 import (
 	"bytes"

@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/clh021/text-parser/config"
+	"github.com/clh021/text-parser/log"
 	"github.com/linakesi/lnksutils"
 )
 
@@ -36,7 +37,7 @@ func GetProgramPath() string {
 }
 
 func Run() {
-	SetLog()
+	log.SetLog()
 	file := filepath.Join(GetProgramPath(), "config.json")
 	if WaitFile(file) {
 		configs, err := config.LoadConfig(file)
