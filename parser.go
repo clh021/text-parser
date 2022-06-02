@@ -1,6 +1,7 @@
 package textParser
 
 import (
+	"encoding/json"
 	"io/ioutil"
 	"os/exec"
 	"path/filepath"
@@ -44,8 +45,7 @@ func ParseTextFormCommand(cmdStr string) string {
 
 func ParseText(configs config.Config) {
 	for name, conf := range configs {
-		log.Debug("conf: ", conf)
-		log.Infof("name(%+v): %+v\n", name, conf.FormType)
+		log.Infof("name(%+v): %+v\n", name, conf)
 		switch conf.FormType {
 		case "file":
 			conf.Text = ParseTextFormFile(conf.FormSource)
@@ -54,32 +54,31 @@ func ParseText(configs config.Config) {
 		default:
 			log.Errorf("Error: Do not support formType '%s'.\n", conf.FormType)
 		}
-		log.Warnf("name(%+v): %+v\n", name, conf)
-		log.Errorf("name(%+v): %+v\n", name, conf)
 
 		po := &pipes.PipeObj{}
 		po.Start(conf.Text)
 
 		for _, p := range conf.Pipes {
-			log.Debugf("%T %+v \t", p.Cmd, p.Cmd)
-			log.Debugf("%T %+v \n", p.Params, p.Params)
+			log.Debugf("Pipes:cmd: type=%T, value=%+v \t", p.Cmd, p.Cmd)
+			log.Debugf("Pipes:params: type=%T, value=%+v \n", p.Params, p.Params)
 			meth := reflect.ValueOf(po).MethodByName(p.Cmd)
 			if !meth.IsValid() {
 				log.Errorf("Error: Do not Support PipeMethod '%+v'.\n", p.Cmd)
 			}
-			result := meth.Call([]reflect.Value{
+			calledResult := meth.Call([]reflect.Value{
 				reflect.ValueOf(p.Params),
 			})
-			log.Debugf("%+v", result)
-			err := result[0].Interface() // result 返回的是多个值
-			if err == nil {
-				log.Errorf("No error returned by", p.Cmd)
-			} else {
-				log.Errorf("Error calling %s: %v", p.Cmd, err)
+			err := calledResult[0].Interface() // calledResult 返回的是多个值
+			if err != nil {
+				log.Errorf("Pipes:Error calling %s: %v", p.Cmd, err)
 			}
 			if conf.Debug {
 				// log.Debugf("%+v", po.GetStr())
-				log.Debugf("%+v", po.GetArr())
+				lastArrJSON, err := json.Marshal(po.GetArr())
+				if err != nil {
+					log.Errorf("Error: %s", err.Error())
+				}
+				log.Debugf("Pipes: lastArr: %+v", string(lastArrJSON))
 			}
 		}
 	}
