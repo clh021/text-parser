@@ -70,7 +70,7 @@ func ParseText(configs config.Config) {
 			})
 			err := calledResult[0].Interface() // calledResult 返回的是多个值
 			if err != nil {
-				log.Errorf("Pipes:Error calling %s: %v", p.Cmd, err)
+				log.Errorf("Pipes: Error calling %s: %v", p.Cmd, err)
 			}
 			if conf.Debug {
 				// log.Debugf("%+v", po.GetStr())
