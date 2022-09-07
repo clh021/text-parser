@@ -16,10 +16,10 @@ type Pipe struct {
 }
 
 type TextForm struct {
-	FormType   string `json:"formType" validate:"required,oneof=command file2"`
-	FormSource string `json:"formSource" validate:"required,min=3,max=260"`
-	Debug      bool   `json:"debug"`
-	Pipes      []Pipe `json:"pipes" validate:"required"`
+	FormType   string   `json:"formType" validate:"required,oneof=command file2"`
+	FormSource []string `json:"formSource" validate:"required,min=3,max=260"`
+	Debug      bool     `json:"debug"`
+	Pipes      []Pipe   `json:"pipes" validate:"required"`
 	Text       string
 }
 

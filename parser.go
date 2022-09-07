@@ -32,9 +32,9 @@ func ParseTextFormFile(source string) string {
 	return string(content)
 }
 
-func ParseTextFormCommand(cmdStr string) string {
+func ParseTextFormCommand(pathBin string, args ...string) string {
 	var outbuf, errbuf strings.Builder
-	cmd := exec.Command(cmdStr)
+	cmd := exec.Command(pathBin, args...)
 	cmd.Env = os.Environ()
 	cmd.Env = append(cmd.Env, "TEXT_PARSER=1")
 	cmd.Stdout = &outbuf
@@ -53,9 +53,11 @@ func ParseText(configs config.Config) {
 		// 根据配置的获取不同类型的文本来源
 		switch conf.FormType {
 		case "file":
-			conf.Text = ParseTextFormFile(conf.FormSource)
+			filepath := conf.FormSource[0]
+			conf.Text = ParseTextFormFile(filepath)
 		case "command":
-			conf.Text = ParseTextFormCommand(conf.FormSource)
+			pathBin, args := conf.FormSource[0], conf.FormSource[1:]
+			conf.Text = ParseTextFormCommand(pathBin, args...)
 		default:
 			log.Errorf("Error: Do not support formType '%s'.\n", conf.FormType)
 		}
