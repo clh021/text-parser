@@ -43,8 +43,8 @@
         "formType": "command",
         "formSource": ["lspci", "-vvv"],
         "pipes":[
-            {"cmd":"split", "params": ["\n"]},
-            {"cmd":"contain", "params": ["Resolution"]}
+            {"cmd":"Split", "params": ["\n"]},
+            {"cmd":"Contain", "params": ["Resolution"]}
         ]
     }
 }
