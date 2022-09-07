@@ -46,6 +46,8 @@ func ParseTextFormCommand(cmdStr string) string {
 func ParseText(configs config.Config) {
 	for name, conf := range configs {
 		log.Infof("name(%+v): %+v\n", name, conf)
+
+		// 根据配置的获取不同类型的文本来源
 		switch conf.FormType {
 		case "file":
 			conf.Text = ParseTextFormFile(conf.FormSource)
@@ -55,23 +57,35 @@ func ParseText(configs config.Config) {
 			log.Errorf("Error: Do not support formType '%s'.\n", conf.FormType)
 		}
 
+		// 初始化文本处理中心
 		po := &pipes.PipeObj{}
+
+		// 传入预处理文本 最终也通过po.Get** 等方式取出处理后的文本
 		po.Start(conf.Text)
 
+		// 循环出所有文本处理配置
 		for _, p := range conf.Pipes {
 			log.Debugf("Pipes:cmd: type=%T, value=%+v \t", p.Cmd, p.Cmd)
 			log.Debugf("Pipes:params: type=%T, value=%+v \n", p.Params, p.Params)
+
+			// 验证配置的处理方式是否已经支持
 			meth := reflect.ValueOf(po).MethodByName(p.Cmd)
 			if !meth.IsValid() {
 				log.Errorf("Error: Do not Support PipeMethod '%+v'.\n", p.Cmd)
 			}
+
+			// 调用配置的处理方式，得到结果
 			calledResult := meth.Call([]reflect.Value{
 				reflect.ValueOf(p.Params),
 			})
-			err := calledResult[0].Interface() // calledResult 返回的是多个值
+
+			// 确认处理没有发生错误
+			err := calledResult[0].Interface() // calledResult 返回的是多个值(虽然函数就一个值)
 			if err != nil {
 				log.Errorf("Pipes: Error calling %s: %v", p.Cmd, err)
 			}
+
+			// 根据配置判断是否输出日志
 			if conf.Debug {
 				// log.Debugf("%+v", po.GetStr())
 				lastArrJSON, err := json.Marshal(po.GetArr())
