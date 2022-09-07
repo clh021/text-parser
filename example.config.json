@@ -1,7 +1,7 @@
 {
     "file": {
         "formType": "file",
-        "formSource":"filename.text",
+        "formSource":["filename.text"],
         "pipes":[
             {"cmd":"TitleByNextLineStartWith", "params": ["**"]},
             {"cmd":"TitleByNextLineStartWith", "params": ["--"]},
