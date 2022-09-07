@@ -14,6 +14,11 @@
             {"cmd":"Join", "params": ["\n"]}
         ]
     },
+    "lscpuCmd": {
+        "formType": "command",
+        "formSource":"lscpu -json",
+        "pipes":[]
+    },
     "lshwCmd": {
         "formType": "command",
         "formSource":"lshw -json",
