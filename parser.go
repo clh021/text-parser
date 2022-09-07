@@ -3,6 +3,7 @@ package textParser
 import (
 	"encoding/json"
 	"io/ioutil"
+	"os"
 	"os/exec"
 	"path/filepath"
 	"reflect"
@@ -34,6 +35,8 @@ func ParseTextFormFile(source string) string {
 func ParseTextFormCommand(cmdStr string) string {
 	var outbuf, errbuf strings.Builder
 	cmd := exec.Command(cmdStr)
+	cmd.Env = os.Environ()
+	cmd.Env = append(cmd.Env, "TEXT_PARSER=1")
 	cmd.Stdout = &outbuf
 	cmd.Stderr = &errbuf
 	err := cmd.Run()
