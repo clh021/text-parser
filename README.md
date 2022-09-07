@@ -1,6 +1,17 @@
 # text-parser
 text parser by configured
 
+
+    字符串输入后，根据规则，被处理后存储到处理中心的对象内部中，
+    可能被截取为数组，也可能存为一个字符串
+    处理完成后，由最外层程序取出最后的 lastStr 输出
+
+    如果处理结果中一直是 lastArr(lastStr为空),则自动将其 JSON 为 lastStr
+
+    本项目最初是为硬件信息识别开始，硬件信息的命令方式从config.json中已经看出很多已经支持了JSON输出
+    而 dmidecode 方式可以参考 [项目一](https://github.com/xemoe/dmid2json)，[项目二](https://github.com/paulstuart/dmijson) 
+    所以本项目可能暂时不会继续
+
 # conf
 
 ## methods
