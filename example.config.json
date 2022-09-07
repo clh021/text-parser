@@ -16,7 +16,7 @@
     },
     "lscpuCmd": {
         "formType": "command",
-        "formSource":"lscpu -json",
+        "formSource":"lscpu -J",
         "pipes":[]
     },
     "lshwCmd": {
