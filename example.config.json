@@ -5,7 +5,7 @@
         "pipes":[
             {"cmd":"TitleByNextLineStartWith", "params": ["**"]},
             {"cmd":"TitleByNextLineStartWith", "params": ["--"]},
-            {"cmd":"TitleByStartwith", "params": ["-"]},
+            {"cmd":"TitleByStartWith", "params": ["-"]},
             {"cmd":"Split", "params": ["\n"]},
             {"cmd":"Contain", "params": ["Resolution"]},
             {"cmd":"Join", "params": ["\n"]},
@@ -16,32 +16,32 @@
     },
     "lscpuCmd": {
         "formType": "command",
-        "formSource":"lscpu -J",
+        "formSource": ["lscpu", "-J"],
         "pipes":[]
     },
     "lshwCmd": {
         "formType": "command",
-        "formSource":"lshw -json",
+        "formSource": ["lshw", "-json"],
         "pipes":[]
     },
     "lsmemCmd": {
         "formType": "command",
-        "formSource":"lsmem -J",
+        "formSource": ["lsmem", "-J"],
         "pipes":[]
     },
     "lsipcCmd": {
         "formType": "command",
-        "formSource":"lsipc -J",
+        "formSource": ["lsipc", "-J"],
         "pipes":[]
     },
     "lsblkCmd": {
         "formType": "command",
-        "formSource":"lsblk -J",
+        "formSource": ["lsblk", "-J"],
         "pipes":[]
     },
     "lspciCmd": {
         "formType": "command",
-        "formSource":"lspci -vvv",
+        "formSource": ["lspci", "-vvv"],
         "pipes":[
             {"cmd":"split", "params": ["\n"]},
             {"cmd":"contain", "params": ["Resolution"]}
