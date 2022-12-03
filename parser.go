@@ -1,7 +1,9 @@
 package textParser
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -16,12 +18,14 @@ import (
 	"github.com/linakesi/lnksutils"
 )
 
+var currentBinPath, _ = lib.GetProgramPath()
+
+// if err != nil {
+// 	log.Panic(err)
+// }
+
 func ParseTextFormFile(source string) string {
-	currentPath, err := lib.GetProgramPath()
-	if err != nil {
-		log.Panic(err)
-	}
-	file := filepath.Join(currentPath, source)
+	file := filepath.Join(currentBinPath, source)
 	if !lnksutils.IsFileExist(file) {
 		log.Panicf("Error: file not found: %+v\n", file)
 	}
@@ -48,6 +52,8 @@ func ParseTextFormCommand(pathBin string, args ...string) string {
 
 func ParseText(configs config.Config) {
 	for name, conf := range configs {
+		var lastResult []byte
+		resultFileName := fmt.Sprintf("%s.parse.result.txt", name)
 		log.Infof("name(%+v): %+v\n", name, conf)
 
 		// 根据配置的获取不同类型的文本来源
@@ -96,9 +102,14 @@ func ParseText(configs config.Config) {
 				lastArrJSON, err := json.Marshal(po.GetArr())
 				if err != nil {
 					log.Errorf("Error: %s", err.Error())
+					lastResult = []byte(po.GetStr())
+				} else {
+					resultFileName = fmt.Sprintf("%s.parse.result.json", name)
+					// log.Debugf("Pipes: lastArr: %+v", string(lastArrJSON))
+					lastResult = lastArrJSON
 				}
-				log.Debugf("Pipes: lastArr: %+v", string(lastArrJSON))
 			}
 		}
+		lnksutils.SaveToFile(bytes.NewReader(lastResult), filepath.Join(currentBinPath, resultFileName))
 	}
 }
