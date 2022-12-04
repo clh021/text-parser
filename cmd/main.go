@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"os"
 
-	textParser "github.com/clh021/text-parser"
+	tea "github.com/charmbracelet/bubbletea"
+	"github.com/clh021/text-parser/tui"
 )
 
 // 支持启动时显示构建日期和构建版本
@@ -12,5 +14,9 @@ var build = "not set"
 
 func main() {
 	fmt.Printf("Build: %s\n", build)
-	textParser.Run()
+
+	if _, err := tea.NewProgram(tui.NewModel(), tea.WithAltScreen()).Run(); err != nil {
+		fmt.Println("Error while running program:", err)
+		os.Exit(1)
+	}
 }
