@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/clh021/text-parser/tui"
+	tuigithub "github.com/clh021/text-parser/tui-github"
 	tuitodo "github.com/clh021/text-parser/tui-todo"
 )
 
@@ -14,6 +15,12 @@ var build = "not set"
 
 func main() {
 	fmt.Printf("Build: %s\n", build)
+
+	if _, err := tuigithub.Run(); err != nil {
+		// if _, err := tea.NewProgram(tui.NewModel(), tea.WithAltScreen()).Run(); err != nil {
+		fmt.Println("Error while running program:", err)
+		os.Exit(1)
+	}
 
 	if _, err := tuitodo.Run(); err != nil {
 		// if _, err := tea.NewProgram(tui.NewModel(), tea.WithAltScreen()).Run(); err != nil {
