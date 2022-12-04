@@ -6,7 +6,7 @@ import (
 	"github.com/charmbracelet/bubbles/textarea"
 )
 
-func NewModel() model {
+func newModel() model {
 	m := model{
 		inputs: make([]textarea.Model, initialInputs),
 		help:   help.New(),

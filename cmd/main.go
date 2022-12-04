@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 
-	tea "github.com/charmbracelet/bubbletea"
 	"github.com/clh021/text-parser/tui"
 )
 
@@ -15,7 +14,8 @@ var build = "not set"
 func main() {
 	fmt.Printf("Build: %s\n", build)
 
-	if _, err := tea.NewProgram(tui.NewModel(), tea.WithAltScreen()).Run(); err != nil {
+	if _, err := tui.Run(); err != nil {
+		// if _, err := tea.NewProgram(tui.NewModel(), tea.WithAltScreen()).Run(); err != nil {
 		fmt.Println("Error while running program:", err)
 		os.Exit(1)
 	}
