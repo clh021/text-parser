@@ -2,8 +2,17 @@ package tuigithub
 
 import (
 	"fmt"
+	"strconv"
 
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/charmbracelet/lipgloss"
+)
+
+var (
+	cyan  = lipgloss.NewStyle().Foreground(lipgloss.Color("#00FFFF"))
+	green = lipgloss.NewStyle().Foreground(lipgloss.Color("#32CD32"))
+	gray  = lipgloss.NewStyle().Foreground(lipgloss.Color("#696969"))
+	gold  = lipgloss.NewStyle().Foreground(lipgloss.Color("#B8860B"))
 )
 
 type model struct {
@@ -56,26 +65,27 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 func (m model) View() string {
 	var s string
 	if m.err != nil {
-		s = fmt.Sprintf("Fetch trending failed: %v", m.err)
+		s = gold.Render(fmt.Sprintf("fetch trending failed: %v", m.err))
 	} else if len(m.repos) > 0 {
 		for _, repo := range m.repos {
 			s += repoText(repo)
 		}
-		s += "--------------------------------------"
+		s += cyan.Render("--------------------------------------")
 	} else {
-		s = " Fetching GitHub trending ..."
+		s = gold.Render(" Fetching GitHub trending ...")
 	}
 	s += "\n\n"
-	s += "Press q or ctrl + c or esc to exit..."
+	s += gray.Render("Press q or ctrl + c or esc to exit...")
 	return s + "\n"
 }
 
 func repoText(repo *Repo) string {
-	s := "--------------------------------------\n"
-	s += fmt.Sprintf(`Repo:  %s | Language:  %s | Stars:  %d | Forks:  %d | Stars today:  %d
-`, repo.Name, repo.Lang, repo.Stars, repo.Forks, repo.Add)
-	s += fmt.Sprintf("Desc:  %s\n", repo.Desc)
-	s += fmt.Sprintf("Link:  %s\n", repo.Link)
+	s := cyan.Render("--------------------------------------") + "\n"
+	s += fmt.Sprintf(`Repo:  %s | Language:  %s | Stars:  %s | Forks:  %s | Stars today:  %s
+`, cyan.Render(repo.Name), cyan.Render(repo.Lang), cyan.Render(strconv.Itoa(repo.Stars)),
+		cyan.Render(strconv.Itoa(repo.Forks)), cyan.Render(strconv.Itoa(repo.Add)))
+	s += fmt.Sprintf("Desc:  %s\n", green.Render(repo.Desc))
+	s += fmt.Sprintf("Link:  %s\n", gray.Render(repo.Link))
 	return s
 }
 
