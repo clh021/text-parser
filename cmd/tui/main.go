@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/clh021/text-parser/tui"
-	tuigithub "github.com/clh021/text-parser/tui-github"
-	tuitodo "github.com/clh021/text-parser/tui-todo"
+	"github.com/clh021/text-parser/cmd/tui/tui"
+	tuigithub "github.com/clh021/text-parser/cmd/tui/tui-github"
+	tuitodo "github.com/clh021/text-parser/cmd/tui/tui-todo"
 )
 
 // 支持启动时显示构建日期和构建版本
