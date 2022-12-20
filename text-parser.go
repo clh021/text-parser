@@ -3,9 +3,9 @@ package textParser
 import (
 	"path/filepath"
 
-	"github.com/clh021/text-parser/config"
 	"github.com/clh021/text-parser/lib"
 	"github.com/clh021/text-parser/log"
+	parseconf "github.com/clh021/text-parser/parse-conf"
 	"github.com/linakesi/lnksutils"
 )
 
@@ -26,7 +26,7 @@ func Run() {
 	}
 	file := filepath.Join(currentPath, "config.json")
 	if WaitFile(file) {
-		configs, err := config.LoadConfig(file)
+		configs, err := parseconf.LoadConfig(file)
 		if err != nil {
 			log.Panic(err)
 		}

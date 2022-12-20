@@ -11,9 +11,9 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/clh021/text-parser/config"
 	"github.com/clh021/text-parser/lib"
 	"github.com/clh021/text-parser/log"
+	parseconf "github.com/clh021/text-parser/parse-conf"
 	"github.com/clh021/text-parser/pipes"
 	"github.com/linakesi/lnksutils"
 )
@@ -50,7 +50,7 @@ func ParseTextFormCommand(pathBin string, args ...string) string {
 	return outbuf.String()
 }
 
-func ParseText(configs config.Config) {
+func ParseText(configs parseconf.Config) {
 	for name, conf := range configs {
 		var lastResult []byte
 		resultFileName := fmt.Sprintf("%s.parse.result.txt", name)
