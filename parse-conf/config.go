@@ -1,4 +1,4 @@
-package config
+package parseconf
 
 import (
 	"github.com/linakesi/lnksutils"
