@@ -43,6 +43,11 @@ type FileSystemItem struct {
 
 type FileSystemList struct{}
 
+func GetFileSystem() []FileSystemItem {
+	list := NewFileSystemList()
+	return list.Run()
+}
+
 func NewFileSystemList() *FileSystemList {
 	return &FileSystemList{}
 }

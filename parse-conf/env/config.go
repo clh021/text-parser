@@ -1,11 +1,12 @@
 package env
 
 import (
+	"os"
 	"strings"
 )
 
-func ParseEnv(str string) map[string]string {
-	envStrs := strings.Split(str, "\n")
+func GetEnv() map[string]string {
+	envStrs := os.Environ() // strings.Split(str, "\n")
 	m := make(map[string]string)
 	for _, e := range envStrs {
 		if i := strings.Index(e, "="); i >= 0 {
