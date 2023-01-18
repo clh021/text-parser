@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/clh021/text-parser/lib"
+	"github.com/clh021/text-parser/parse-conf/df"
 	"github.com/clh021/text-parser/parse-conf/env"
 	"github.com/spf13/viper"
 )
@@ -17,12 +17,23 @@ import (
 var build = "not set"
 
 func bindOSArgs() {
-	if len(os.Args) > 2 {
+	if len(os.Args) > 1 {
 		if strings.HasPrefix(os.Args[1], "--") {
 			format := os.Args[1]
 			viper.SetDefault("format", format[2:])
-			viper.SetDefault("command", os.Args[2])
+			// viper.SetDefault("command", os.Args[2])
 		}
+	}
+}
+
+func printJson(v any) {
+	jsonStr, _ := json.Marshal(v)
+	var prettyJSON bytes.Buffer
+	error := json.Indent(&prettyJSON, jsonStr, "", "\t")
+	if error != nil {
+		fmt.Println("JSON parse error: ", error)
+	} else {
+		fmt.Println(prettyJSON.String())
 	}
 }
 
@@ -46,21 +57,11 @@ func main() {
 	// fmt.Println(viper.AllSettings())
 	// fmt.Println("config:", conf)
 	switch conf.Format {
+	case "df":
+		printJson(df.GetFileSystem())
+
 	case "env":
-		b, err := lib.ExecGetSysInfoStdout(conf.Command)
-		if err != nil {
-			fmt.Println(err)
-		} else {
-			parseStr := env.ParseEnv(string(b))
-			jsonStr, _ := json.Marshal(parseStr)
-			var prettyJSON bytes.Buffer
-			error := json.Indent(&prettyJSON, jsonStr, "", "\t")
-			if error != nil {
-				fmt.Println("JSON parse error: ", error)
-			} else {
-				fmt.Println(prettyJSON.String())
-			}
-		}
+		printJson(env.GetEnv())
 
 	default:
 		fmt.Printf("parsing this format '%v' is not currently supported.", conf.Format)
