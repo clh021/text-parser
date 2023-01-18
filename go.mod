@@ -1,6 +1,6 @@
 module github.com/clh021/text-parser
 
-go 1.18
+go 1.19
 
 require (
 	github.com/PuerkitoBio/goquery v1.5.1

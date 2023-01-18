@@ -14,6 +14,19 @@ text parser by configured
 
 所以本项目可能暂时不会继续
 
+```shell
+# 参数解析规则
+# 解析 hostnamectl 的输出
+text-parser "file:filename.text,split:\n,trim,split::,trim,json:encode"
+# 解析 html 的元素值
+text-parser "url:http://t.weather.sojson.com/api/weather/city/101200101,split:\n"
+text-parser "file:1.html,split:\n"
+# 解析 lscpu 的输出
+text-parser "file:filename.text,split:\n"
+# 解析 lshw 的输出
+text-parser
+```
+
 # conf
 
 ## methods
